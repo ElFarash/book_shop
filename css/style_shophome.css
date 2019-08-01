@@ -1,0 +1,85 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.first-container{
+	background-color: #e9ecef99!important;
+	height: 550px;
+}
+header{
+	padding-top: 5px;
+	height: 70px;
+	border-bottom:1px solid rgba(0,0,0,.3);
+}
+
+.abook{
+	color: rgba(0,0,0,.5) !important;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.abook:hover{
+	color: rgba(0,0,0,.7) !important;
+	text-decoration: none;
+}
+.nav-link{
+	font-size: 20px;
+	font-weight: bold;
+}
+.navbar{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.signup{
+	padding-right:15px;
+}
+.login{
+	padding-left: 4px;
+}
+.ss ul{
+	float: right;
+}
+.ss{
+	padding-right: 0px;
+}
+
+.slide-show{
+	margin-top: 60px;
+}
+img{
+	height: 355px;
+}
+.hrline{
+	height: 30px;
+	border-bottom: 10px solid #e9ecef99;
+}
+.rr{
+	margin-top: 20px;
+	color: rgba(0,0,0,.5) !important;
+	font-size: 20px;
+	font-weight: bold;
+}
+hr{
+	border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.row span{
+	padding-left: 15px;
+}
+
+.card img{
+	height: 230px;
+}
+.seemore{
+	float: right;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color:cadetblue;
+	text-decoration: none;
+}
+.seemore:hover{
+	text-decoration: none;
+}
+
+

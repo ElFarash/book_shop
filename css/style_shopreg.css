@@ -1,0 +1,150 @@
+body{
+	background-image: url("../imagees/mickey-o-neil-NXKqkXzchPQ-unsplash.jpg");
+	background-repeat: no-repeat;
+	height: 150vh;
+/*	background-color:#d1e1f15e;*/
+	background-size: cover;
+}
+.form-container{
+	position: absolute;
+	top: 117px;
+	width: 400px;
+	background:#fff;
+	padding: 30px;
+	border-radius: 5px;
+	height: 750px;
+}
+.d1{
+	margin-bottom: 35px;
+}
+.form-check{
+	margin-top: 30px;
+	padding-left: 0px;
+}
+.form-check label{
+	margin-left: 20px;
+}
+.linkk{
+	margin-top: 30px;
+	margin-left: 1px !important;
+	text-align: center;
+}
+.linkk a {
+	text-decoration:none;
+	color:#618898c7;
+	font-weight: bold;
+}
+.er1{
+	height: 15px;
+}
+.yes{
+	margin-top: 150px;
+	font-weight: bold;
+	font-size: 40px;
+	font-family:sans-serif;
+	text-align: center;
+	height: 70px;
+	display: none;
+	color:#fff;
+}
+.bttm{
+	border-radius: 17px;
+	width: 300px;
+	margin-left: 23px;
+	background-color:  #618898c7;
+	border-color: #81a1ae;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 1.3px;
+}
+.bttm:hover{
+	color: black;
+	background-color: #618898c7;
+	border-color: #81a1ae;
+	font-weight: bold;
+}
+.bttm:visited{
+	background-color: #618898c7;
+	border-color: #81a1ae;
+}
+p{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+.form-control{
+	border: 1px solid #cccccc61;
+}
+
+/*@media only screen and (max-width:1205px){
+	.ss{
+		margin-right: 130px;
+mtnassh l responsive maben l 500px we l 750px l goz2 dh msh responsive shofo
+	}
+}*/
+@media only screen and (width:360px){
+	.ss{
+		margin-right: 120px !important;
+	}
+}
+@media only screen and (width:411px){
+	.ss{
+		margin-top: 60px !important;
+		margin-right: 120px !important;
+	}
+	body{
+		height: 135vh;
+	}
+}
+@media only screen and (width:411px) and (height:731px){
+	.ss{
+		margin-top: 60px !important;
+		margin-right: 120px !important;
+	}
+	body{
+		height: 153vh;
+	}
+}
+
+@media only screen and (width:320px){
+	.ss{
+		margin-right: 130px !important;
+	}
+	body{
+		height: 170vh;
+	}
+}
+@media only screen and (width:375px){
+	.ss{
+		margin-right: 130px !important;
+	}
+}
+@media only screen and (width:414px) and (height:736px){
+	.ss{
+		margin-left: -120px !important;
+	}
+	body{
+		height: 135vh;
+	}
+	
+}
+@media only screen and (width:375px) and (height:812px){
+	body{
+		height: 123vh;	
+	}
+}
+@media only screen and (width:768px){
+	body{
+		height: 100vh;	
+	}
+}
+@media only screen and (width:1024px){
+	body{
+		height: 100vh;	
+	}
+	.ss{
+		margin-top: 150px !important;
+		margin-right: 80px !important;
+	}
+	
+}

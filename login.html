@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> our login page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/style_shop.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		
+		
+		
+		<section class="container bigone">
+			<section class="row justify-content-center">
+				<section class="col-12 col-sm-6 col-md-4">
+					<form class="form-container" id="loginform">
+						<p>Welcome!</p>
+						<div class="er2"></div>
+					  <div class="form-group">
+						  <span><i class="fa fa-envelope-o"></i></span>
+						<label for="exampleInputEmail1">Email address</label>	   
+						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="name">
+						<div class="er1">
+							<span id="emailid"></span>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						 <span><i class="fa fa-lock"></i></span>
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+						  <div class="er1">
+							  <span id="passwordid"></span>
+						  </div>
+					  </div>
+						<div class="form-group form-check">
+							<label class="form-check-label" for="exampleCheck1">Remember me</label>
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+					  </div>
+						
+					  
+					  <button type="submit" id="save" class="btn btn-primary bttm" name="submit">Log in</button>
+						<div class="form-group linkk">
+							<label>Don't have an account ?</label>
+							<!--<i class="fas fa-arrow-right"></i>-->
+						<a href="registeration.html">Sign UP </a>
+					  </div>
+					</form>
+					<div class="yes"></div>
+				</section>
+				
+			</section>
+		</section>
+		
+			
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="https://kit.fontawesome.com/20306c5b8e.js"></script>
+		<script src="js/jquery-3.4.1.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/bookshop_js.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		
+	</body>
+</html>
+
+		<!--
+		<script>
+			$(document).ready(function(){
+				$("#save").click(function(){
+					
+					var name = $('#exampleInputEmail1').val();
+					var password = $('#exampleInputPassword1').val();
+					if (name!=''){
+						$.ajax({
+						url:'http://6.6.6.202/book_shop/login.php',
+						type:'POST',
+						datatype: 'json',
+						data: {email:name , password:password},
+							success:function(data){
+								alert("success");
+							}
+						})
+					}else{
+						alert("error");
+					}
+					
+				});
+			});
+		</script> 
+-->
