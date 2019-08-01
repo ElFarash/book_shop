@@ -86,9 +86,9 @@ $("#loginform").submit(function(e){
                    var object = {
                         first_name: firstName.value,
                         last_name: lastName.value,
-                        email: document.getElementById("EMail").value,
-                        password: document.getElementById("Password").value,
-                        mobile : document.getElementById("Telephone").value
+                        email: email.value,
+                        password: password.value,
+                        mobile : phone.value
                     };
                          $.ajax
                     ({

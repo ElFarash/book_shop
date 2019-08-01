@@ -1,4 +1,6 @@
-var webservice = "http://localhost/book_shop/backend/login.php";           
+var webservice = "http://localhost/book_shop/backend/login.php";   
+
+
  $("#loginform").submit(function(e){
               e.preventDefault();
               var email = document.getElementById("email");     
@@ -29,8 +31,8 @@ var webservice = "http://localhost/book_shop/backend/login.php";
                   //event handler for submit button
 //                 $("#btnSubmit").click(function () {
                  //collect userName and password entered by users
-                         var userName = $("#email").val();
-                         var password = $("#password").val();
+                         var userName = email.value;
+                         var password = password.value;
                          $.ajax
                     ({
                         type: "POST",
