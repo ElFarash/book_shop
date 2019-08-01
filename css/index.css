@@ -1,0 +1,69 @@
+body{
+	
+	background-image: url();
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 1000px;
+}
+
+.container-fluid{
+	 
+	background-color: #f8f9fa; 
+	height: 560px;
+}
+.dd{
+	
+ padding: 0px;
+}
+
+.hr{
+	margin-top: 0;
+	margin-bottom: 50px;
+}
+
+
+.logo{
+	
+	width: 65px;
+	height: 65px;
+	border-radius: 80px !important;
+	
+	
+}
+
+
+.nav-link{
+	color: black;
+	font-size: 17px;
+	font-weight:500;
+	
+}
+
+li{
+	
+	padding: 0px 10px;
+}
+
+.w-100 {
+	
+    height: 370px
+}
+
+.startCard{
+	
+	background-color:#f8f9fa; 
+}
+
+.ss{
+	background-color:#f8f9fa; 
+		
+
+}
+
+
+.row{
+	margin-bottom: 15px;
+}
+.hr2{
+	margin-top: 50px
+}
