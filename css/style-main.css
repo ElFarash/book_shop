@@ -1,0 +1,83 @@
+.navbar{
+    border-bottom: 0.5px groove black;
+    font-family: source sans pro,sans-serif;
+    height: 60px;
+   background-color: #f5f5f5;
+    
+}
+
+
+.navbar-light .navbar-brand {
+  
+  
+  padding: 12px;
+    height: 30px;
+   
+
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+    padding: 40px;
+    letter-spacing: 2px;
+    
+}
+
+
+
+
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: red;
+}
+
+
+
+.logo{
+    height: 50px;
+    margin-top: -20px;
+    
+}
+
+
+/*Slide*/
+
+.slide-containerr{
+
+
+    position: relative;
+    top: 20px;
+
+    padding-bottom: 30px;
+    
+   
+}
+
+
+.carousel-caption{
+    color: white;
+    font-weight: bold;
+}
+
+div > img {
+    height: 570px;
+}
+
+
+.containing-slider{
+   background-color: #f5f5f5;
+}
