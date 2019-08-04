@@ -55,7 +55,7 @@ var webservice = "http://localhost/book_shop/backend/login.php";
                             document.getElementById("none-div").style.display= "block";
                             document.getElementById("none-div").innerHTML=data.message;
                             setTimeout(function(){
-                                window.open("main.html","_self"); }, 5000);
+                                window.open("index.html","_self"); }, 5000);
 
                          
                             }

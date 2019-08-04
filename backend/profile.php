@@ -2,6 +2,8 @@
 
 include_once('database\conn.php');
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+
 
 $headers = apache_request_headers();
 

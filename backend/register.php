@@ -1,9 +1,10 @@
 <?php
 
 include_once('database\conn.php');
-
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+
+
 
 $errors =[] ;       
 
@@ -41,17 +42,10 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
     }
 
     if(strlen($mobile) == 0 ) {
-        //array_push($errors, ['mobile' => 'mobile number field is required!']); 
           $errors["mobile"] = 'mobile number field is required!';
     }else{
-        if (strlen($mobile) == 11 ) {
-            if($mobile[0] != 0 or $mobile[1] != 1){
-                //array_push($errors,['mobile'=>'mobile number must start with 01']);
-                 $errors["mobile"] = 'mobile number must start with 01';
-            }
-        }else{
-           // array_push($errors,['mobile'=>'mobile number must have 11 digits']);
-            $errors["mobile"] = 'mobile number must have 11 digits';
+        if(!preg_match("/^01[0-9]{9}$/", $mobile)){
+            $errors["mobile"] = "mobile must be 11 digits and starts with 01";
         }
     }
 

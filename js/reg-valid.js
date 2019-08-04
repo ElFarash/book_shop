@@ -108,7 +108,7 @@ $("#loginform").submit(function(e){
                             document.getElementById("none-div2").style.display= "block";
                             document.getElementById("none-div2").innerHTML=data.message;
                             setTimeout(function(){
-                            window.open("main.html","_self"); }, 5000);
+                            window.open("index.html","_self"); }, 5000);
 
                                  
                              }
