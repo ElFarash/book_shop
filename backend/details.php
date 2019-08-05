@@ -11,9 +11,9 @@ if(isset($_GET['id'])){
   	echo json_encode($response);
 }
 
-$query = "SELECT books.id, books.image_path , books.title , authors.image as author_image , authors.name as author_name, books.rate , authors.description  as author_bio , books.description as book_description 
+$query = "SELECT books.id, books.image_path , books.title , books.rate  , authors.image as author_image , authors.name as author_name, authors.description  as author_bio , books.description as book_description 
 FROM authors , books , book_gallery
-WHERE authors.id = books.author_id && books.id = $book_id && books.id = book_gallery.book_id
+WHERE  books.id = $book_id && authors.id = books.author_id && books.id = book_gallery.book_id
 ORDER by books.id";
 
 $result = $conn->query($query);
@@ -29,7 +29,7 @@ array_push($book_info, $books_authors_details[0]);
 unset($book_info[0]['image_path']);
 
 
-$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'Book_Info' => $book_info[0] , 'Book_Images' => $images];
+$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images];
 echo json_encode($response);
 
 
