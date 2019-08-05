@@ -107,6 +107,11 @@ div > img {
     
 }
 
+.names{
+    font-weight: bold;
+    
+    
+}
 
 .card {
     
@@ -140,6 +145,7 @@ div > img {
 .btn{
     background-color: #f5f5f5;
     border: 0.5px solid black;
+/*    margin-left: 60px;*/
     
 }
 
@@ -183,4 +189,19 @@ div > img {
     left: 70px;
      
     color: silver;
+}
+
+.fa-facebook-f:hover{
+    text-decoration: none;
+   
+}
+
+.fa-twitter:hover{
+    text-decoration: none;
+    color: aqua;
+}
+
+.fa-instagram:hover{
+     text-decoration: none;
+    color: red;
 }
