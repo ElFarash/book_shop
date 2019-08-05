@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2019 at 03:11 PM
+-- Generation Time: Aug 05, 2019 at 04:14 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -44,9 +44,9 @@ INSERT INTO `authors` (`id`, `name`, `description`, `image`) VALUES
 (2, 'Tara Westover', 'Tara Westover is an American memoirist, essayist and historian. Her memoir Educated debuted at #1 on the New York Times bestseller list and was a finalist for a number of national awards, including the LA Times Book Prize, PEN America\'s Jean Stein Book Aw', 'https://images-na.ssl-images-amazon.com/images/I/B1PNLDB9k9S._SY600_.jpg'),
 (3, 'Mark Levin', 'Mark Reed Levin is an American lawyer, author, and radio personality. He is the host of syndicated radio show The Mark Levin Show, as well as Life, Liberty & Levin on Fox News. Levin worked in the administration of President Ronald Reagan and was a chief ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Mark_Levin_by_Gage_Skidmore_2.jpg/220px-Mark_Levin_by_Gage_Skidmore_2.jpg'),
 (4, 'gregg jarrett', 'Gregory Walter \"Gregg\" Jarrett is an American news commentator, author, and attorney. He joined the Fox News Channel in November 2002, after working over ten years for local NBC and ABC TV stations, as well as national networks Court TV and MSNBC', 'https://images-na.ssl-images-amazon.com/images/I/51XqOhOpxlL._US230_.jpg'),
-(5, 'Jeanine Pirro', 'Jeanine Ferris Pirro is an American television host, author, and a former judge, prosecutor, and politician from New York. Pirro is the host of Fox News Channel\'s Justice with Judge Jeanine. She was a frequent contributor to NBC News', 'https://cdn.nixonlibrary.org/01/wp-content/uploads/2018/08/22105950/Jeanine-Preferred.jpg'),
-(6, 'Lori Gottlieb', 'Lori Gottlieb is an American writer and psychotherapist, who writes the weekly “Dear Therapist” advice column for The Atlantic.', 'https://pbs.twimg.com/profile_images/1108090636236787712/-FZ_UntX.png'),
-(7, 'Debbie Macomber', 'Debbie Macomber is an American author of romance novels and contemporary women\'s fiction. Six of her novels have become made-for-TV movies and her Cedar Cove series of novel was adapted into the television series of the same name.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Debbie_Macomber.jpg/220px-Debbie_Macomber.jpg');
+(5, 'Jeanine Pirro', 'Jeanine Ferris Pirro is an American television host, author, and a former judge, prosecutor, and politician from New York. Pirro is the host of Fox News Channel\'s Justice with Judge Jeanine. She was a frequent contributor to NBC News', 'https://images-na.ssl-images-amazon.com/images/I/51XqOhOpxlL._US230_.jpg'),
+(6, 'Lori Gottlieb', 'Lori Gottlieb is an American writer and psychotherapist, who writes the weekly Dear Therapist advice column for The Atlantic', 'https://images-na.ssl-images-amazon.com/images/I/51XqOhOpxlL._US230_.jpg'),
+(7, 'Debbie Macomber', 'Debbie Macomber is an American author of romance novels and contemporary women\'s fiction. Six of her novels have become made-for-TV movies and her Cedar Cove series of novel was adapted into the television series of the same name.', 'https://images-na.ssl-images-amazon.com/images/I/51XqOhOpxlL._US230_.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ INSERT INTO `books` (`id`, `title`, `rate`, `author_id`, `published_at`, `image_
 (4, 'Witch Hunt', 8, 4, '2019-08-08', 'https://i.harperapps.com/covers/9780062960092/x510.jpg', 'gregg jarrett', 'A witch-hunt or a witch purge is a search for people who have been labelled \"witches\" or a search for evidence of witchcraft, and it often involves a moral panic or mass hysteria'),
 (5, 'Radicals, Resistance, and Revenge', 9, 5, '2019-09-27', 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg', 'Jeanine Pirro', 'Picking up where her #1 New York Times bestseller, Liars, Leakers and Liberals, left off, Judge Jeanine Pirro of Fox\'s Justice with Judge Jeanine exposes the latest chapter in the unfolding liberal attack on our most basic values'),
 (6, 'Liars, Leakers, and Liberals', 3, 5, '2019-07-17', 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg', 'Jeanine Pirro', 'Liars, Leakers, and Liberals: The Case Against the Anti-Trump Conspiracy is a 2018 book authored by Jeanine Pirro, an American TV personality, former judge, prosecutor, district attorney and Republican politician in New York.'),
-(7, 'Maybe You Should Talk to Someone', 4, 6, '2019-04-02', 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg', 'Lori Gottlieb', 'Ever wonder what your therapist is really thinking? Now you can find out … Meet Lori Gottlieb'),
+(7, 'Maybe You Should Talk to Someone', 4, 6, '2019-04-02', 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg', 'Lori Gottlieb', 'sdasd'),
 (8, 'Trump vs. the Media ', 7, 1, '2017-04-25', 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg', 'Mollie Hemingway', 'How bad is the problem of media bias? The answer can be summed up in a few words: President Donald J. Trump'),
 (9, 'Marry Him', 8, 6, '2011-02-01', 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg', 'Lori Gottlieb', 'An eye-opening, funny, painful, and always truthful in-depth examination of modern relationships and a wake-up call for single women about getting real about Mr. Right.'),
 (10, 'Stick Figure', 10, 6, '2017-11-17', 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg', 'Lori Gottlieb', 'Stick Figure is an American reggae and dub band founded in 2006 and based in Northern California'),
@@ -124,10 +124,10 @@ INSERT INTO `book_gallery` (`id`, `book_id`, `image`) VALUES
 (22, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
 (23, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
 (24, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
-(25, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
-(26, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
-(27, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
-(28, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
+(25, 7, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(26, 7, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(27, 7, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(28, 7, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
 (29, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
 (30, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
 (31, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
