@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2019 at 05:06 PM
+-- Generation Time: Aug 05, 2019 at 03:11 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -80,7 +80,7 @@ INSERT INTO `books` (`id`, `title`, `rate`, `author_id`, `published_at`, `image_
 (8, 'Trump vs. the Media ', 7, 1, '2017-04-25', 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg', 'Mollie Hemingway', 'How bad is the problem of media bias? The answer can be summed up in a few words: President Donald J. Trump'),
 (9, 'Marry Him', 8, 6, '2011-02-01', 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg', 'Lori Gottlieb', 'An eye-opening, funny, painful, and always truthful in-depth examination of modern relationships and a wake-up call for single women about getting real about Mr. Right.'),
 (10, 'Stick Figure', 10, 6, '2017-11-17', 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg', 'Lori Gottlieb', 'Stick Figure is an American reggae and dub band founded in 2006 and based in Northern California'),
-(11, 'Maybe You Should Talk to Someone - life from both sides', 10, 6, '2019-02-02', 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg', 'Lori Gottlieb', '. So, despite my misgivings about listening to all the therapist-speak, I used a ..... It is the type of book that you read and then immediately hand off to someone '),
+(11, 'Maybe You Should Talk to Someone v2', 10, 6, '2019-02-02', 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg', 'Lori Gottlieb', '. So, despite my misgivings about listening to all the therapist-speak, I used a ..... It is the type of book that you read and then immediately hand off to someone '),
 (12, 'A Little Bit Country', 10, 7, '2019-05-21', 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg', 'Debbie Macomber', 'The boys learn about the politics of war and the consequences of homework.');
 
 -- --------------------------------------------------------
@@ -119,7 +119,35 @@ INSERT INTO `book_gallery` (`id`, `book_id`, `image`) VALUES
 (17, 5, 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg'),
 (18, 5, 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg'),
 (19, 5, 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg'),
-(20, 5, 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg');
+(20, 5, 'https://images-na.ssl-images-amazon.com/images/I/51lXCepytGL._SX329_BO1,204,203,200_.jpg'),
+(21, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
+(22, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
+(23, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
+(24, 6, 'https://images-na.ssl-images-amazon.com/images/I/81UDmZOb1wL.jpg'),
+(25, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
+(26, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
+(27, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
+(28, 7, 'https://images-na.ssl-images-amazon.com/images/I/51OBv43TthL._SX329_BO1,204,203,200_.jpg'),
+(29, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(30, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(31, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(32, 8, 'https://images-na.ssl-images-amazon.com/images/I/51EfDxAyoJL._SX337_BO1,204,203,200_.jpg'),
+(33, 9, 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg'),
+(34, 9, 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg'),
+(35, 9, 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg'),
+(36, 9, 'https://images-na.ssl-images-amazon.com/images/I/41y2kiw0IUL._SX331_BO1,204,203,200_.jpg'),
+(40, 10, 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg'),
+(41, 10, 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg'),
+(42, 10, 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg'),
+(43, 10, 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg'),
+(44, 11, 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg'),
+(45, 11, 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg'),
+(46, 11, 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg'),
+(47, 11, 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg'),
+(48, 12, 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg'),
+(49, 12, 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg'),
+(50, 12, 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg'),
+(51, 12, 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg');
 
 -- --------------------------------------------------------
 
@@ -290,7 +318,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `book_gallery`
 --
 ALTER TABLE `book_gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `genres`
