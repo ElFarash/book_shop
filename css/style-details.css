@@ -1,0 +1,243 @@
+
+
+
+.navbar{
+    border-bottom: 1px solid #E5EDED;
+    font-family: source sans pro,sans-serif;
+    height: 60px;
+    background-color: #f5f5f5;
+    
+}
+
+
+.navbar-light .navbar-brand {
+  
+  
+  padding: 12px;
+    height: 30px;
+    
+   
+
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+    padding: 40px;
+    letter-spacing: 2px;
+    
+}
+
+
+
+
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: red;
+}
+
+
+
+.logo{
+    height: 50px;
+    margin-top: -20px;
+    
+}
+
+
+/*product card*/
+
+/*
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  font-family: arial;
+}
+
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+    
+}
+
+.card button:hover {
+  opacity: 0.6;
+}
+
+
+.card img {
+    width: 100%;
+}*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+a
+{
+    text-decoration: none;
+}
+*/
+.product-card {
+    width: 380px;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    margin: 50px auto;
+    background: white;
+}
+
+
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 50px;
+    background: #f0f0f0;
+}
+
+.carousel-item img {
+   
+    max-width: 70%;
+    max-height: 70%;
+    margin-left: 40px;
+    
+}
+
+.product-details {
+    padding: 30px;
+}
+
+
+
+.product-details h4 {
+    
+   
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #363636;
+     font-family: source sans pro,sans-serif;
+    font-weight: bold;
+    
+}
+
+.product-details h5{
+    font-size: 15px;
+     font-family: source sans pro,sans-serif;
+}
+
+
+.product-details p {
+     font-size: 15px;
+     color: black;
+     font-family: source sans pro,sans-serif;
+}
+
+.product-bottom-download {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-download div {
+    float: left;
+    width: 50%;
+}
+
+.product-download {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-download button{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 200%;
+  font-size: 18px;
+    
+}
+.rate{
+    font-weight: bold;
+    
+}
+.bio{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+/*footer*/
+
+
+.copywrite{
+   position: relative;
+    left: 980px;
+    top: 45px;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: silver;
+}
+
+.foot-container{
+    margin-top: 50px;
+    border-top: 1px solid #E5EDED;
+    background-color: #f5f5f5;
+    height: 90px;
+}
+
+.fa-facebook-f{
+    position: relative;
+    
+    color: silver;
+}
+
+.fa-twitter{
+    position: relative;
+    left: 40px;
+    
+    color: silver;
+}
+
+.fa-instagram{
+    position: relative;
+    left: 70px;
+     
+    color: silver;
+}
