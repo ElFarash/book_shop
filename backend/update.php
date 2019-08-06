@@ -9,7 +9,8 @@ $headers = apache_request_headers();
 $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';  
 
 
-$errors =[] ;       
+$errors =[] ;    
+$id = isset($_GET['id']) ? $_GET['id'] : "" ;   
 
 if (isset($_POST['password']) && isset($_POST['first_name'])) {
     $first_name = $_POST['first_name'];
