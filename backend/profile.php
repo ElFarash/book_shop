@@ -3,11 +3,10 @@
 include_once('database\conn.php');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Alllow-Headers: Authorization');
 
 
 $headers = apache_request_headers();
-
-
 $token = $headers['Authorization'];
 
 $query = "SELECT * FROM users WHERE token='$token' ";
