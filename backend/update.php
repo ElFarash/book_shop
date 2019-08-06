@@ -3,7 +3,10 @@
 include_once('database\conn.php');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Alllow-Headers: Authorization');
 
+$headers = apache_request_headers();
+$token = isset($headers['Authorization']) ? $headers['Authorization'] : '';  
 
 
 $errors =[] ;       
@@ -13,7 +16,8 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
 	$last_name = $_POST['last_name'];
     $password = $_POST['password'];
     $mobile = $_POST['mobile'];
-    $id = $_POST['id'];
+    $id = isset($_POST['id']) ? $_POST['id'] : "" ;
+
 
 
     if (strlen($password) == 0) {
@@ -31,11 +35,10 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
     }
 
     if (!count($errors)) {
-        $rand  = md5(uniqid(rand(), true));
        
         $query=" UPDATE users	 
         SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile'
-        WHERE id='$id' " ;
+        WHERE id='$id' or token ='$token' " ;
 
         $result = $conn->query($query);
 
