@@ -32,8 +32,9 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
 
     if (!count($errors)) {
         $rand  = md5(uniqid(rand(), true));
-        $query=" UPDATE USERS 
-        SET , first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile'
+       
+        $query=" UPDATE users	 
+        SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile'
         WHERE id='$id' " ;
 
         $result = $conn->query($query);
