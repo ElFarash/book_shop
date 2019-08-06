@@ -158,9 +158,13 @@ a
      font-family: source sans pro,sans-serif;
 }
 
+.rate{
+    font-size: 15px;
+     font-family: source sans pro,sans-serif;
+}
 
 .product-details p {
-     font-size: 15px;
+     font-size: 16px;
      color: black;
      font-family: source sans pro,sans-serif;
 }
@@ -193,7 +197,7 @@ a
     
 }
 .rate{
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
     height: 22px;
     
@@ -242,4 +246,39 @@ a
     left: 70px;
      
     color: silver;
+}
+
+.fa-facebook-f:hover{
+    text-decoration: none;
+   
+}
+
+.fa-twitter:hover{
+    text-decoration: none;
+    color: aqua;
+}
+
+.fa-instagram:hover{
+     text-decoration: none;
+    color: red;
+}
+
+
+
+
+/*after login*/
+
+
+.last_name{
+    font-family: 'Lora', serif;
+    position: relative;
+    right: 20px;
+    
+}
+
+
+.logout{
+    color: black;
+    font-family: 'Lora', serif;
+    background-color: white;
 }

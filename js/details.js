@@ -15,12 +15,12 @@ $.ajax
                         data: object,
                       
                         success: function (data) {
-                           console.log(data.Book_Info);
+//                           console.log(data.book_info);
 //                            for(var i=0 ;i< data.book_info.length; i++){
                               
                                 var info= 
-//                     
-        '<h4>'+data.book_info.title+'</h4><h5 class="rate">By:'+data.book_info.author_name+'</h5> <span class="rate">'+data.book_info.rate+'</span><p><span class="bio">Book description: </span>'+data.book_info.book_description+'</p><p><span class="bio">Author bio:</span>'+data.book_info.author_bio+'</p><div class="product-bottom-download"><div class="product-download"><button class="btn btn-success">Download</button></div></div>';
+                    
+        '<h4>'+data.book_info.title+'</h4><h5 class="rate">By:'+data.book_info.author_name+'</h5> <span class="rate">Rate:'+data.book_info.rate+'</span><p><span class="bio">Book description: </span>'+data.book_info.book_description+'</p><p><span class="bio">Author bio:</span>'+data.book_info.author_bio+'</p><div class="product-bottom-download"><div class="product-download"><button class="btn btn-success">Download</button></div></div>';
                               $('.product-details').append(info);
                             
                             
@@ -36,3 +36,32 @@ $.ajax
 //                            alert(data.status)
 //                        }
 //                     })
+
+
+
+    var token= { key: localStorage.getItem("auth_key")};
+//            console.log(token);
+
+                $.ajax({
+                        type: "POST",
+                        url: "http://localhost/book_shop/backend/profile.php" ,
+                        dataType: 'json',
+                        headers: {'Authorization': token.key},
+                        success: function (data) {
+                            console.log(data);
+                            if(token.key=""){
+                               var header_name=
+    '<ul class="navbar-nav ml-auto"><li class="nav-item active"><a class="nav-link" href="login.html">Login<span class="sr-only">(current)</span></a></li><li class="nav-item"><a class="nav-link" href="register.html">Register</a></li></ul>';
+                            $('.header_nav .collapse').append(header_name);}
+                            
+                        else{
+                            var header_name=
+                            '<ul class="navbar-nav ml-auto"><li class="nav-item last_name">'+data.info.last_name+'</li></ul> <button type="button" class="btn btn-danger logout">Log out</button>';
+                            $('.header_nav .collapse').append(header_name);}
+                            console.log(data.info.first_name);
+                        
+                        },
+                        error : function (data){
+                            alert(data.status)
+                        }
+                     });

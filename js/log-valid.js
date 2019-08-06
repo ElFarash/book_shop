@@ -45,6 +45,7 @@ var webservice = "http://localhost/book_shop/backend/login.php";
                       data: {"email": userName, "password": password },
                         success: function (data) {
                             if(data.status == 1){
+//                                console.log(data.token);
                             //do any process for successful authentication here
 //                            alert('Login status: ' + data.status);
 //                            console.log(data);
@@ -56,8 +57,11 @@ var webservice = "http://localhost/book_shop/backend/login.php";
                             document.getElementById("none-div").innerHTML=data.message;
                             setTimeout(function(){
                                 window.open("index.html","_self"); }, 5000);
-
-                         
+                                //to get token and store it in localstorage
+                              localStorage.setItem("auth_key", data.token);
+//                              console.log(localStorage.getItem("auth_key"));
+                                
+                                
                             }
                             else{
 //                                 console.log(data);
