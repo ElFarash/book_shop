@@ -17,10 +17,8 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
 
 
     if (strlen($email) == 0) {
-        //array_push($errors, ['email'=> 'The email field is required.']);
         $errors["email"] = 'The email field is required.';
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //array_push($errors, ['email'=>'wrong email format']);
           $errors["email"] = 'Wrong Email Format!';
     } else {
         $query = "SELECT COUNT(*) AS K FROM USERS WHERE email='$email' ";
@@ -28,16 +26,13 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
         $row = $result->fetch_assoc();
         $K = $row['K'];
         if (intval($K) > 0) {
-          // array_push($errors, ['email' => 'this email is used by another person.']);
               $errors["email"] = 'This Email Is Used By Another Person!';
         }
     }
 
     if (strlen($password) == 0) {
-        //array_push($errors, ['password' => 'The password field is required.']);
         $errors["password"] = 'The Password Field Is Required!' ;
     } else if (strlen($password) < 4) {
-        //array_push($errors, ['password' => 'password so weak']);
           $errors["password"] = 'Password So Weak!';
     }
 
@@ -62,7 +57,6 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
     }
     
 }else {
-   // array_push($errors,['register' => 'Email , Password and FirstName must be filled']);
     $errors['register'] = 'Email , Password and FirstName must be filled';
     $response = ['status' => 0 , 'errors' => $errors];
     echo json_encode($response);

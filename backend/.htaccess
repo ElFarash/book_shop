@@ -1,0 +1,3 @@
+<IfMoudle mod_headers.c >
+	Header set Access-Control-Allow-Headers "Authorization"
+</IfModule>
