@@ -3,13 +3,13 @@
 include_once('database\conn.php');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Alllow-Headers: Authorization');
+header('Access-Control-Allow-Headers: *');
 
 $headers = apache_request_headers();
 $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';  
 
 
-$errors =[] ;    
+$errors =[] ;
 $id = isset($_GET['id']) ? $_GET['id'] : "" ;   
 
 if (isset($_POST['password']) && isset($_POST['first_name'])) {
@@ -51,7 +51,7 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
     }
     
 }else {
-    $errors['register'] = 'New Password and New FirstName must be filled';
+    $errors['update'] = 'New Password and New FirstName must be filled';
     $response = ['status' => 0 , 'errors' => $errors];
     echo json_encode($response);
 }
