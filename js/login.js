@@ -1,3 +1,4 @@
+var webservice = "http://localhost/book_shop/backend/login.php";
 $("#loginform").submit(function(e){
 					  
 		        e.preventDefault();
@@ -33,7 +34,7 @@ $("#loginform").submit(function(e){
                     ({
                         type: "POST",
                         //the url where you want to sent the userName and password to
-                        url: "http://6.6.7.51/book_store/login.php",
+                        url: webservice,
                         dataType: 'json',
                         async: false,
                         //json object to sent to the authentication url
@@ -54,10 +55,13 @@ $("#loginform").submit(function(e){
 							    myDiv.style.marginTop = '160px';
 							    setTimeout(function(){
 									 window.open("index.html","_self"); }, 5000);
+								
+								localStorage.setItem("token", data.token);
+								console.log(data.token);
 							
 							}else{
 							var myShow = document.getElementById("error");
-							myShow.innerHTML = data.message;
+							myShow.innerHTML = data.errors.login;
 						    myShow.style.fontSize = '15px';
 							myShow.style.fontWeight = 'bold';
 							myShow.style.color = 'red';
@@ -76,5 +80,7 @@ $("#loginform").submit(function(e){
 						
                      });
 			       }
+	             
+	             
                  });
 
