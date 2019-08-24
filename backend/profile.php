@@ -1,18 +1,24 @@
 <?php 
 
-include_once('database\conn.php');
+include("classes\connection.php");
+include("classes\users.php");
+include("classes\books.php");
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 
+$objConn = new DbConnect('localhost','ahmed','123456789','books');
+$conn = $objConn->connect();
+
+$obj = new Users($conn);
+
 $headers = apache_request_headers();
-$token = $headers['Authorization'];
+$token = isset($headers['Authorization']) ? $headers['Authorization'] : ''; 
 
-$query = "SELECT * FROM users WHERE token='$token' ";
-$result = $conn->query($query);
-$users = $result->fetch_assoc();
 
-$response = ['status' => 1 , 'info' => $users ];
+$user = $obj->getInfo($token);
+
+$response = ['status' => 1 , 'info' => $user ];
 echo json_encode($response);
 
 

@@ -1,10 +1,15 @@
 <?php
-include_once('database\conn.php');
-header('Content-Type: application/json'); 
+include("classes\connection.php");
+include("classes\users.php");
+include("classes\books.php");
+header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 
+$objConn = new DbConnect('localhost','ahmed','123456789','books');
+$conn = $objConn->connect();
 
+$obj = new Users($conn);
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
@@ -19,16 +24,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     }
 
     if (!count($errors)) {
-        $query = "SELECT token FROM USERS WHERE email='$email' AND password='$password';";
-        $result = $conn->query($query);
-        $tokens = $result->fetch_assoc();
-        if ($tokens){
-            foreach ($tokens as $token) {
-                $response = ['status' => 1, 'message' => 'Logged In Successfully!', 'token' => $token ];
-                echo json_encode($response);
-            }
+        list($state, $token) = $obj->token($email , $password);
+        if ($state){
+            $response = ['status' => 1, 'message' => 'Logged In Successfully!', 'token' => $token ];
+            echo json_encode($response);
         } else {
-            $errors['login'] = 'Email And/Or Password Are Incorrect!';
+            $errors['login'] = $token;
             $response = ['status' => 0 ,'errors' => $errors];
             echo json_encode($response);
         }

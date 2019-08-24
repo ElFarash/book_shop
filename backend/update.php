@@ -1,9 +1,17 @@
 <?php 
 
-include_once('database\conn.php');
+include("classes\connection.php");
+include("classes\users.php");
+include("classes\books.php");
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
+
+$objConn = new DbConnect('localhost','ahmed','123456789','books');
+$conn = $objConn->connect();
+
+$obj = new Users($conn);
+
 
 $headers = apache_request_headers();
 $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';  
@@ -37,11 +45,7 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
 
     if (!count($errors)) {
        
-        $query=" UPDATE users	 
-        SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile'
-        WHERE id='$id' or token ='$token' " ;
-
-        $result = $conn->query($query);
+        $obj->updateInfo($first_name , $last_name , $password , $mobile , $id , $token);
 
         $response = array('status' => 1, 'message' => 'data updated');
         echo json_encode($response);

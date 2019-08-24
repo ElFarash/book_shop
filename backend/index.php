@@ -1,16 +1,12 @@
-<?php
-include_once('database/conn.php');
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+<?php 
+
+include("classes/users.php");
+
+$obj_conn = new DbConnect("localhost" , "ahmed" , "123456789" , "books") ; 
+$conn = $obj_conn->connect();
 
 
+$obj = new Users($conn);
+$obj->showAll();
 
-$query = "SELECT id , title , rate , author_name , image_path , published_at FROM books ";  // lesa images we keda 
-$result = $conn->query($query);
-$books = $result->fetch_all(MYSQLI_ASSOC);
-
-$response = ['status' => 1, 'message' => 'all books loaded fine' , 'books'=> $books];
-echo json_encode($response);
-
-
-?>
+ ?>

@@ -5,7 +5,6 @@ include_once('database\conn.php');
 $title = $_POST['title'];
 
 
-
 $file = $_FILES['book_image'];
 print_r($file);
 
