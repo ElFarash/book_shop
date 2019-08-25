@@ -74,6 +74,7 @@ class Users
     }
 
     public function getInfo($token){
+        #returns all users's info 
         $query = "SELECT users.first_name , users.last_name , users.email , users.password , users.mobile , users.token , users.type , users.bio , users_images.image as image 
                 FROM users , users_images 
                 WHERE token='$token' and users.img_id = users_images.id";
@@ -90,6 +91,21 @@ class Users
         $this->connection->query($query);
     }
 	
+    public function getId($token){
+        #returns user's id 
+        $query = "SELECT id
+                FROM users 
+                WHERE token='$token'";
+        $result = $this->connection->query($query);
+        $user_id = $result->fetch_assoc();
+        return $user_id;
+    }
+
+    public function AddBookList($user_id , $book_id ){
+        #take book and put it in user's book list
+        $query = "INSERT INTO books_of_user (user_id , book_id) VALUES ($user_id,'$book_id') ";
+        $result = $this->connection->query($query);
+    }
 
 }
 
