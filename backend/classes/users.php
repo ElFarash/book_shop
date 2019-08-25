@@ -84,8 +84,19 @@ class Users
     }
 
     public function updateInfo($first_name , $last_name , $password , $mobile , $id , $token , $bio){
+        $letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        $letters_big = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        $image_id = 0 ;
+
+        for ($i=0; $i <26 ; $i++) { 
+            if($last_name[0] == $letters[$i]){
+                $image_id = $i + 1  ;
+                break;
+            }
+        }
+
         $query="UPDATE users    
-                SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile' , bio = '$bio'
+                SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile' , bio = '$bio' , img_id = '$image_id'
                 WHERE id='$id' or token ='$token' " ;
 
         $this->connection->query($query);
