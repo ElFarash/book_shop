@@ -32,7 +32,6 @@ $flag = 1;
 
 
 $user_id = $objUser->getId($token);
-print_r($user_id['id']);
 
 
 foreach ($books_authors_details as $book) {
