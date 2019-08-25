@@ -1,34 +1,4 @@
-
-                    $.ajax({
-                        type: "GET",
-                        
-                        url: "http://localhost/book_shop/backend/books.php" ,
-                        dataType: 'json',
-                        
-                      
-                        success: function (data) {
-//                           console.log(data.books);
-//                            console.log(localStorage.getItem("person_token"));
-                            for(var i=0 ;i< data.books.length; i++){
-//                                data.books[i]
-                                var card= 
-                     
-         '<div class="card" style="width: 18rem;"><img src="'+data.books[i].image_path+'"class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+data.books[i].title+'</h5><p class="card-text"><span class="names">Author name:</span>'+data.books[i].author_name+'</p><p class="card-text"><span class="names">Published at</span>:'+data.books[i].published_at+'</p><button onclick="redirect('+data.books[i].id+')" id="card-button" class="info btn btn-primary">More Info</button></div></div>';
-                                $('.items .lo .row').append(card);
-                            }
-                            
-                    
-                        },
-                        error : function (data){
-                            alert("error")
-                        }
-                     });
-
-
-
-
-    
-    var token= { key: localStorage.getItem("auth_key")};
+var token= { key: localStorage.getItem("auth_key")};
 //            console.log(token);
 
                 $.ajax({
@@ -41,7 +11,18 @@
                                 
                                 var header_name=
                             '<ul class="navbar-nav ml-auto"><a href="profile.html"><li class="nav-item last_name">'+data.info.last_name+'</li></a></ul> <button onclick="localstorage_remove()" type="button" class="btn btn-danger logout">Log out</button>';
-                            $('.header_nav .collapse').append(header_name);}
+                            $('.header_nav .collapse').append(header_name);
+                            
+                            
+                               var retrieve=
+                                   '<div class="avatar"><img src="../images/1071625.jfif" height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><h4>10 po box new york</h4><p class="bio">grew up in a working class neighbourhood. He was raised by his father, his mother having left when he was young.He is currently in a relationship with Chelsea Rhiannon Moss. Chelsea is 2 years older than him and works as a lab assistant.Steves best friend is a P.P.E. student called Jaydan Nguyen. They have a very firey friendship. He also hangs around with Ayden Young and Dylan Owen. They enjoy relaxing together.</p><a href="update.html"><button class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
+                                $('.user-details').append(retrieve);
+                            
+                            
+                            
+                            
+                            
+                            }
                             
                             else{
                                var header_name=
@@ -61,6 +42,8 @@
                             alert(data.status)
                         }
                      });
+
+
 
 
 
@@ -92,4 +75,3 @@ function localstorage_remove(){
 //console.log(token.key);
 //token.key="";
 //console.log(token.key);
-

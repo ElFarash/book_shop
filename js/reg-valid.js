@@ -109,6 +109,7 @@ $("#loginform").submit(function(e){
                             document.getElementById("none-div2").innerHTML=data.message;
                             setTimeout(function(){
                             window.open("index.html","_self"); }, 5000);
+                                 localStorage.setItem("auth_key", data.token);
 
                                  
                              }
