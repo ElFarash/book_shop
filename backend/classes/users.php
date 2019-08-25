@@ -74,6 +74,7 @@ class Users
     }
 
     public function getInfo($token){
+        #returns all users's info 
         $query = "SELECT users.first_name , users.last_name , users.email , users.password , users.mobile , users.token , users.type , users.bio , users_images.image as image 
                 FROM users , users_images 
                 WHERE token='$token' and users.img_id = users_images.id";
@@ -83,13 +84,51 @@ class Users
     }
 
     public function updateInfo($first_name , $last_name , $password , $mobile , $id , $token , $bio){
+        $letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        $letters_big = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        $image_id = 0 ;
+
+        for ($i=0; $i <26 ; $i++) { 
+            if($last_name[0] == $letters[$i]){
+                $image_id = $i + 1  ;
+                break;
+            }
+        }
+
         $query="UPDATE users    
-                SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile' , bio = '$bio'
+                SET  first_name='$first_name', last_name='$last_name' , password='$password' , mobile='$mobile' , bio = '$bio' , img_id = '$image_id'
                 WHERE id='$id' or token ='$token' " ;
 
         $this->connection->query($query);
     }
 	
+    public function getId($token){
+        #returns user's id 
+        $query = "SELECT id
+                FROM users 
+                WHERE token='$token'";
+        $result = $this->connection->query($query);
+        $user_id = $result->fetch_assoc();
+        return $user_id;
+    }
+
+    public function AddBookList($user_id , $book_id ){
+        #take book and put it in user's book list
+        $query = "INSERT INTO books_of_user (user_id , book_id) VALUES ($user_id,'$book_id') ";
+        $result = $this->connection->query($query);
+    }
+
+    public function ShowBookList($token){
+        #take token and return the user's book list
+        $id =$this->getId($token);
+        $temp = $id['id'];
+        $query = "SELECT   books_of_user.user_id , books.id , books.title , books.rate , books.author_name , books.image_path , books.published_at  
+            FROM books , books_of_user 
+            WHERE  books.id = books_of_user.book_id and books_of_user.user_id = '$temp' "; 
+        $result = $this->connection->query($query);
+        $books = $result->fetch_all(MYSQLI_ASSOC);
+        return $books;
+    }
 
 }
 

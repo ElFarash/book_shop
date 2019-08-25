@@ -1,15 +1,18 @@
 <?php 
-include("classes\connection.php");
-include("classes\users.php");
-include("classes\books.php");
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
+include("classes\connection.php");
+include("classes\users.php");
+include("classes\books.php");
+
 
 $objConn = new DbConnect('localhost','ahmed','123456789','books');
 $conn = $objConn->connect();
 $objBook = new Books($conn);
 $objUser = new Users($conn);
+
+
 
 if(isset($_GET['id'])){
 	$book_id = $_GET['id'];
@@ -26,6 +29,11 @@ $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';     
 $images = [];
 $book_info = [];
 $flag = 1; 
+
+
+$user_id = $objUser->getId($token);
+print_r($user_id['id']);
+
 
 foreach ($books_authors_details as $book) {
 	array_push($images, $book['image_path']);
@@ -49,9 +57,14 @@ if($flag == 0 ){
 	$book_info[0]['url'] = "";
 }
 
-
 $response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images];
 echo json_encode($response);
+
+
+if($_POST['like']){
+	$user_id = $objUser->getId($token);
+	$objUser->AddBookList($user_id['id'] , $book_id);
+}
 
 
  ?>
