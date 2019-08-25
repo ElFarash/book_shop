@@ -107,6 +107,18 @@ class Users
         $result = $this->connection->query($query);
     }
 
+    public function ShowBookList($token){
+        #take token and return the user's book list
+        $id =$this->getId($token);
+        $temp = $id['id'];
+        $query = "SELECT   books_of_user.user_id , books.id , books.title , books.rate , books.author_name , books.image_path , books.published_at  
+            FROM books , books_of_user 
+            WHERE  books.id = books_of_user.book_id and books_of_user.user_id = '$temp' "; 
+        $result = $this->connection->query($query);
+        $books = $result->fetch_all(MYSQLI_ASSOC);
+        return $books;
+    }
+
 }
 
 
