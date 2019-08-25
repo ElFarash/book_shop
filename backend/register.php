@@ -12,6 +12,9 @@ $conn = $objConn->connect();
 $obj = new Users($conn);
 
 $errors =[] ;
+$letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+$letters_big = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+$image_id = 0 ;
 
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_name'])) {
     $first_name = $_POST['first_name'];
@@ -19,7 +22,12 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
     $email = $_POST['email'];	
     $password = $_POST['password'];
     $mobile = $_POST['mobile'];
+    $type = $_POST['type'];
+    $bio  = "no bio yet";
 
+    if (strlen($email) == 0) {
+        $errors["type"] = 'Account Type is Missing!';
+    }
 
     if (strlen($email) == 0) {
         $errors["email"] = 'The email field is required.';
@@ -48,7 +56,16 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
 
     if (!count($errors)) {
     	$rand  = md5(uniqid(rand(), true));
-    	$obj->add($first_name , $last_name , $email , $password , $mobile , $rand);
+
+        for ($i=0; $i <26 ; $i++) { 
+            if($last_name[0] == $letters[$i]){
+                $image_id = $i + 1  ;
+                break;
+            }
+        }
+
+
+    	$obj->add($first_name , $last_name , $email , $password , $mobile , $rand , $image_id , $type , $bio);
         
         $response = array('status' => 1, 'message' => 'registed successfully!' , 'token' => $rand);
         echo json_encode($response);

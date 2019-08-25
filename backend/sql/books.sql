@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2019 at 06:39 PM
+-- Generation Time: Aug 25, 2019 at 01:43 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -153,26 +153,6 @@ INSERT INTO `book_gallery` (`id`, `book_id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
---
-
-CREATE TABLE `customer` (
-  `id_customer` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `mob` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`id_customer`, `name`, `address`, `mob`) VALUES
-(53, 'Ahmed', '265 street', 1125458788);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `genres`
 --
 
@@ -215,31 +195,32 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
-  `token` varchar(255) DEFAULT NULL
+  `token` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `bio` varchar(255) DEFAULT NULL,
+  `img_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `token`) VALUES
-(36, 'mohammad', 'elfarash', 'mohammad.elfarash@gmail.com', '123456789', '01151234879', '7d43306fd65fdbd9dc3ad259bcb17724'),
-(37, 'ahmed', 'naser', 'ahmed.naser@gmail.com', '123456789', '01151234879', '4d07f01a1c90997e3431baf72c839ff4'),
-(38, 'alaa', 'mohammad', 'm.3laa.95@gmail.com', '123456', '01151234879', '944bb541b0c4a953446a001cc5b78b85'),
-(39, 'ahmed', 'naser', 'ahmed.elfarash@gmail.com', '123456789', '01151234879', '6ae9c7ce606058249b69e38813ab5fbd'),
-(53, 'mohamoud', 'ahmed', 'mhmoudahmed@gmail.com', '123456789', '01224866972', '7ca9129f4b3b812fd681c38ce6b27936'),
-(54, 'ahmedd', 'fathy', 'ahmed.fathi74@gmail.com', '123456789', '01143177934', 'ec4089d86e63fa1a549393cad5e129db'),
-(95, 'ahmed', 'naser', 'ahmed_naser@gmail.com', '123456789', '01151234879', 'ef789f3bf5b357fde016732a1a71072f'),
-(96, 'aa', 'aa', 'dsadssa@hotmail.com', '123456789', '01100600239', 'e51dbac89a92afb599975869278d9c09'),
-(97, 'dads', 'asdsaas', 'ddsa@hotmail.com', '1234567', '01100600732', '21f5c8e9b3fc1489717633b60cab5478'),
-(98, 'ahmed', 'fathy', 'af7200097@gmail.com', '123456789', '01143177394', '80998b7c9e11530a963302110102e0b6'),
-(99, 'ahmed', 'essam', 'ahmedessam@hotmail.com', 'ahmed', '01100600297', 'f256add92510bc11de344f6bab305c36'),
-(100, 'ahmeed', 'esssam', 'hhhhsdd@hotmail.com', 'ahmed', '01100200123', '1513f8b9b25e6b8d27c69300b3a8c69a'),
-(101, 'ahmedd', 'essamm', 'ahmedessamm@hotmail.com', '123456789', '01100600297', '4f9b3538b6fff727b28513820c7055d3'),
-(102, 'mohamoud', 'ahmed', 'mhmoudahmed188@gmail.com', '1234', '01224866972', 'a2cb5855f2947fa01659532aa6148b21'),
-(103, 'ahmed', 'naser', 'mohammad.elfaras4h@gmail.com', '12345', '01151234879', '35caf0c4e636efaeb96965d6eeb57e1c'),
-(104, 'mohamoud', 'fathy', 'mhmoudahmed1888@gmail.com', 'qwerty', '01224866972', '440a1fe2eb80c36a3c2ff2f97323bcce'),
-(105, 'ahmed', 'naser', 'mohammad.elfarassaasdhhhhh@gmail.com', '123456789', '01151234879', '8ccd47ff19f20ff7af9d031fffd02a36');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `token`, `type`, `bio`, `img_id`) VALUES
+(36, 'mohammad', 'elfarash', 'mohammad.elfarash@gmail.com', '123456789', '01151234879', '7d43306fd65fdbd9dc3ad259bcb17724', 'author', 'no bio yet', 5),
+(37, 'xaxaxaxaa', 'ssss', 'ahmed.naser@gmail.com', '123456789112', '01151234879', '4d07f01a1c90997e3431baf72c839ff4', 'user', 'dasdsadasdasdasdasdadas', 14),
+(38, 'alaa', 'mohammad', 'm.3laa.95@gmail.com', '123456', '01151234879', '944bb541b0c4a953446a001cc5b78b85', 'user', 'no bio yet', 13),
+(39, 'ahmed', 'naser', 'ahmed.elfarash@gmail.com', '123456789', '01151234879', '6ae9c7ce606058249b69e38813ab5fbd', 'user', 'no bio yet', 14),
+(53, 'mohamoud', 'ahmed', 'mhmoudahmed@gmail.com', '123456789', '01224866972', '7ca9129f4b3b812fd681c38ce6b27936', 'user', 'no bio yet', 1),
+(54, 'ahmedd', 'fathy', 'ahmed.fathi74@gmail.com', '123456789', '01143177934', 'ec4089d86e63fa1a549393cad5e129db', 'user', 'no bio yet', 6),
+(95, 'ahmed', 'naser', 'ahmed_naser@gmail.com', '123456789', '01151234879', 'ef789f3bf5b357fde016732a1a71072f', 'user', 'no bio yet', 14),
+(96, 'aa', 'aa', 'dsadssa@hotmail.com', '123456789', '01100600239', 'e51dbac89a92afb599975869278d9c09', 'user', 'no bio yet', 1),
+(97, 'dads', 'asdsaas', 'ddsa@hotmail.com', '1234567', '01100600732', '21f5c8e9b3fc1489717633b60cab5478', 'user', 'no bio yet', 1),
+(98, 'ahmed', 'fathy', 'af7200097@gmail.com', '123456789', '01143177394', '80998b7c9e11530a963302110102e0b6', 'user', 'no bio yet', 6),
+(99, 'ahmed', 'essam', 'ahmedessam@hotmail.com', 'ahmed', '01100600297', 'f256add92510bc11de344f6bab305c36', 'user', 'no bio yet', 5),
+(100, 'ahmeed', 'esssam', 'hhhhsdd@hotmail.com', 'ahmed', '01100200123', '1513f8b9b25e6b8d27c69300b3a8c69a', 'user', 'no bio yet', 5),
+(101, 'ahmedd', 'essamm', 'ahmedessamm@hotmail.com', '123456789', '01100600297', '4f9b3538b6fff727b28513820c7055d3', 'user', 'no bio yet', 5),
+(112, 'ahmed', 'saser', 'mohammad.elfarash223444ss6@gmail.com', '123456789', '01151234879', 'b1f106502e0ab9c00179f1183aed986c', 'author', 'no bio yet', 19),
+(113, 'ahmed', 'saser', 'dsdasdasdasd.elfarash223444ss6@gmail.com', '123456789', '01151234879', 'dffacd60b36c057651ff1c4fa9155bf4', 'author', 'no bio yet', 19);
 
 -- --------------------------------------------------------
 
@@ -252,6 +233,49 @@ CREATE TABLE `users_books` (
   `book_id` int(11) NOT NULL,
   `name_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_images`
+--
+
+CREATE TABLE `users_images` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_images`
+--
+
+INSERT INTO `users_images` (`id`, `image`) VALUES
+(1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/LetterA.svg/1200px-LetterA.svg.png'),
+(2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/LetterB.svg/1200px-LetterB.svg.png'),
+(3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Letter_c.svg/1200px-Letter_c.svg.png'),
+(4, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/LetterD.svg/1200px-LetterD.svg.png'),
+(5, 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/LetterE.svg/1200px-LetterE.svg.png'),
+(6, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/LetterF.svg/1200px-LetterF.svg.png'),
+(7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/LetterG.svg/1200px-LetterG.svg.png'),
+(8, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/LetterH.svg/1200px-LetterH.svg.png'),
+(9, 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LetterI.svg/1200px-LetterI.svg.png'),
+(10, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/LetterJ.svg/1200px-LetterJ.svg.png'),
+(11, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Letter_k.svg/1200px-Letter_k.svg.png'),
+(12, 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/LetterL.svg/1200px-LetterL.svg.png'),
+(13, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/LetterM.svg/1200px-LetterM.svg.png'),
+(14, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/LetterN.svg/1200px-LetterN.svg.png'),
+(15, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/LetterO.svg/1200px-LetterO.svg.png'),
+(16, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/LetterP.svg/1200px-LetterP.svg.png'),
+(17, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/LetterQ.svg/1200px-LetterQ.svg.png'),
+(18, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/LetterR.svg/1200px-LetterR.svg.png'),
+(19, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Letter_s.svg/1200px-Letter_s.svg.png'),
+(20, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/LetterT.svg/1200px-LetterT.svg.png'),
+(21, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LetterU.svg/1200px-LetterU.svg.png'),
+(22, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Letter_v.svg/1200px-Letter_v.svg.png'),
+(23, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Letter_w.svg/1200px-Letter_w.svg.png'),
+(24, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/LetterX.svg/1200px-LetterX.svg.png'),
+(25, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/LetterY.svg/1200px-LetterY.svg.png'),
+(26, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/LetterZ.svg/1200px-LetterZ.svg.png');
 
 --
 -- Indexes for dumped tables
@@ -300,6 +324,12 @@ ALTER TABLE `users_books`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users_images`
+--
+ALTER TABLE `users_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -337,13 +367,19 @@ ALTER TABLE `publishers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `users_books`
 --
 ALTER TABLE `users_books`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users_images`
+--
+ALTER TABLE `users_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,7 +26,7 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
     $password = $_POST['password'];
     $mobile = $_POST['mobile'];
     $id = isset($_POST['id']) ? $_POST['id'] : "" ;
-
+    $bio = isset($_POST['bio']) ? $_POST['bio'] : "no bio yet" ;
 
 
     if (strlen($password) == 0) {
@@ -45,7 +45,7 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
 
     if (!count($errors)) {
        
-        $obj->updateInfo($first_name , $last_name , $password , $mobile , $id , $token);
+        $obj->updateInfo($first_name , $last_name , $password , $mobile , $id , $token , $bio);
 
         $response = array('status' => 1, 'message' => 'data updated');
         echo json_encode($response);
