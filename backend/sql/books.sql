@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2019 at 01:43 PM
+-- Generation Time: Aug 25, 2019 at 04:51 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -83,6 +83,29 @@ INSERT INTO `books` (`id`, `title`, `rate`, `author_id`, `published_at`, `image_
 (10, 'Stick Figure', 10, 6, '2017-11-17', 'https://images-na.ssl-images-amazon.com/images/I/519S9wbpPIL._AC_SY400_.jpg', 'Lori Gottlieb', 'Stick Figure is an American reggae and dub band founded in 2006 and based in Northern California', 'https://www.investigatii.md/uploads/resurse/Clean_Code.pdf'),
 (11, 'Maybe You Should Talk to Someone v2', 10, 6, '2019-02-02', 'https://images-na.ssl-images-amazon.com/images/I/41pg5NFijeL._SX325_BO1,204,203,200_.jpg', 'Lori Gottlieb', '. So, despite my misgivings about listening to all the therapist-speak, I used a ..... It is the type of book that you read and then immediately hand off to someone ', 'https://www.investigatii.md/uploads/resurse/Clean_Code.pdf'),
 (12, 'A Little Bit Country', 10, 7, '2019-05-21', 'https://images-na.ssl-images-amazon.com/images/I/51QnrWCM1HL.SX316.SY316.jpg', 'Debbie Macomber', 'The boys learn about the politics of war and the consequences of homework.', 'https://www.investigatii.md/uploads/resurse/Clean_Code.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books_of_user`
+--
+
+CREATE TABLE `books_of_user` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books_of_user`
+--
+
+INSERT INTO `books_of_user` (`id`, `user_id`, `book_id`) VALUES
+(15, 36, 5),
+(16, 36, 12),
+(17, 37, 1),
+(18, 36, 5),
+(19, 36, 2);
 
 -- --------------------------------------------------------
 
@@ -207,7 +230,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `token`, `type`, `bio`, `img_id`) VALUES
 (36, 'mohammad', 'elfarash', 'mohammad.elfarash@gmail.com', '123456789', '01151234879', '7d43306fd65fdbd9dc3ad259bcb17724', 'author', 'no bio yet', 5),
-(37, 'xaxaxaxaa', 'ssss', 'ahmed.naser@gmail.com', '123456789112', '01151234879', '4d07f01a1c90997e3431baf72c839ff4', 'user', 'dasdsadasdasdasdasdadas', 14),
+(37, 'xaxaxaxaa', 'zaz', 'ahmed.naser@gmail.com', '123456789112', '01151234879', '4d07f01a1c90997e3431baf72c839ff4', 'user', 'dasdsadasdasdasdasdadas', 26),
 (38, 'alaa', 'mohammad', 'm.3laa.95@gmail.com', '123456', '01151234879', '944bb541b0c4a953446a001cc5b78b85', 'user', 'no bio yet', 13),
 (39, 'ahmed', 'naser', 'ahmed.elfarash@gmail.com', '123456789', '01151234879', '6ae9c7ce606058249b69e38813ab5fbd', 'user', 'no bio yet', 14),
 (53, 'mohamoud', 'ahmed', 'mhmoudahmed@gmail.com', '123456789', '01224866972', '7ca9129f4b3b812fd681c38ce6b27936', 'user', 'no bio yet', 1),
@@ -294,6 +317,12 @@ ALTER TABLE `books`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `books_of_user`
+--
+ALTER TABLE `books_of_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `book_gallery`
 --
 ALTER TABLE `book_gallery`
@@ -344,6 +373,12 @@ ALTER TABLE `authors`
 --
 ALTER TABLE `books`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
+
+--
+-- AUTO_INCREMENT for table `books_of_user`
+--
+ALTER TABLE `books_of_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `book_gallery`
