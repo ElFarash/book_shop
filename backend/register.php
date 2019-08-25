@@ -22,7 +22,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
     $email = $_POST['email'];	
     $password = $_POST['password'];
     $mobile = $_POST['mobile'];
-    $type = $_POST['type'];
+    $type = isset($_POST['type']) ? $_POST['type'] : "user" ; 
     $bio  = "no bio yet";
 
     if (strlen($email) == 0) {
