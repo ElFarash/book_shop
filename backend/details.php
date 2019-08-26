@@ -59,8 +59,8 @@ if($flag == 0 ){
 $response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images];
 echo json_encode($response);
 
-$like = isset($_POST['like']) ? $_POST['like'] : 0;
-if($like != 0){
+$like = isset($_POST['like']) ? $_POST['like'] : '';
+if(strlen($like)){
 	$user_id = $objUser->getId($token);
 	$objUser->AddBookList($user_id['id'] , $book_id);
 }
