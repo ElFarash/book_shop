@@ -59,6 +59,14 @@ class Users
         }
 	}
 
+    public function userType($email){
+        #takes email and return the type of this person's email
+        $query = "SELECT type FROM USERS WHERE email='$email' ";
+        $result = $this->connection->query($query);
+        $type = $result->fetch_assoc();
+        return $type['type'] ;
+    }
+
     public function getUser($token){
         #returns true at valid token    
         $query = "SELECT COUNT(*) AS K FROM USERS WHERE token='$token' ";
@@ -109,8 +117,19 @@ class Users
                 WHERE token='$token'";
         $result = $this->connection->query($query);
         $user_id = $result->fetch_assoc();
-        return $user_id;
+        return $user_id['id'];
     }
+
+        public function getIdByName($last_name){
+        #returns user's id 
+        $query = "SELECT id
+                FROM users 
+                WHERE last_name='$last_name'";
+        $result = $this->connection->query($query);
+        $user_id = $result->fetch_assoc();
+        return $user_id['id'];
+    }
+
 
     public function isBookListed($user_id , $book_id){
         #returns true if book is in user's book list

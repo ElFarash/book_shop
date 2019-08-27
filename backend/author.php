@@ -10,16 +10,20 @@ header('Access-Control-Allow-Headers: *');
 $objConn = new DbConnect('localhost','ahmed','123456789','books');
 $conn = $objConn->connect();
 
-$obj = new Users($conn);
+$objBook = new Books($conn);
+$objUser = new Users($conn);
 
 $headers = apache_request_headers();
 $token = isset($headers['Authorization']) ? $headers['Authorization'] : ''; 
 
 
-$user = $obj->getInfo($token);
+$user = $objUser->getInfo($token);
+$id = $objUser->getId($token);
+
+$books = $objBook->myBook($id);
 
 if($user){
-	$response = ['status' => 1 , 'info' => $user ];
+	$response = ['status' => 1 , 'info' => $user , 'books' => $books ];
 	echo json_encode($response);
 }else{
 	$response =['status' => 0 , 'error' => 'token problem'];
