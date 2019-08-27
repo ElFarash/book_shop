@@ -17,9 +17,10 @@ class Books
 	}
 
 	public function getBook($book_id){
-		$query = "SELECT books.id , books.url , books.image_path , books.title , books.rate , authors.image as author_image , authors.name as author_name, authors.description  as author_bio , books.description as book_description 
-			FROM authors , books , book_gallery
-			WHERE  books.id = $book_id && authors.id = books.author_id && books.id = book_gallery.book_id
+
+		$query = "SELECT books.id , books.url , books.image_path , books.title , books.rate ,users.last_name as author_name, users.bio  as author_bio , books.description as book_description 
+			FROM users , books , book_gallery
+			WHERE  books.id = $book_id && users.id = books.author_id && books.id = book_gallery.book_id
 			ORDER by books.id";
 
 		$result = $this->connection->query($query);
@@ -27,6 +28,11 @@ class Books
 		return $books_authors_details;
 	}
 
+	public function addBook($title , $last_name ,$author_id, $rate , $published_at , $book_description , $fileDestination_image , $fileDestination_book){
+        $query = "INSERT INTO books (title,author_name, author_id ,rate, published_at, description , image_path , url ) 
+             values('$title', '$last_name', '$author_id' ,'$rate', '$published_at', '$book_description' , '$fileDestination_image' , '$fileDestination_book')";
+        return $this->connection->query($query);
+	}
 }
 
  ?>

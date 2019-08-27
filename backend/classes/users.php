@@ -120,6 +120,17 @@ class Users
         return $user_id;
     }
 
+        public function getIdByName($last_name){
+        #returns user's id 
+        $query = "SELECT id
+                FROM users 
+                WHERE last_name='$last_name'";
+        $result = $this->connection->query($query);
+        $user_id = $result->fetch_assoc();
+        return $user_id['id'];
+    }
+
+
     public function isBookListed($user_id , $book_id){
         #returns true if book is in user's book list
         $query = "SELECT COUNT(*) AS K FROM books_of_user WHERE user_id='$user_id' and book_id = '$book_id' ";
