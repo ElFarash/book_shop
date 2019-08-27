@@ -18,8 +18,11 @@ $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';
 
 $user = $obj->getInfo($token);
 
-$response = ['status' => 1 , 'info' => $user ];
-echo json_encode($response);
-
+if($user){
+	$response = ['status' => 1 , 'info' => $user ];
+	echo json_encode($response);
+}else{
+	$response =['status' => 0 , 'error' => 'token problem'];
+}
 
  ?>
