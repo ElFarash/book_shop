@@ -59,6 +59,13 @@ class Users
         }
 	}
 
+    public function userType($email){
+        $query = "SELECT type FROM USERS WHERE email='$email' ";
+        $result = $this->connection->query($query);
+        $type = $result->fetch_assoc();
+        return $type['type'] ;
+    }
+
     public function getUser($token){
         #returns true at valid token    
         $query = "SELECT COUNT(*) AS K FROM USERS WHERE token='$token' ";

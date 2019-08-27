@@ -25,8 +25,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if (!count($errors)) {
         list($state, $token) = $obj->token($email , $password);
+        $type = $obj->userType($email);
         if ($state){
-            $response = ['status' => 1, 'message' => 'Logged In Successfully!', 'token' => $token ];
+            $response = ['status' => 1, 'message' => 'Logged In Successfully!', 'token' => $token , 'type' => $type];
             echo json_encode($response);
         } else {
             $errors['login'] = $token;
