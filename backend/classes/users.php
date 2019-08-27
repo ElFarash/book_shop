@@ -117,7 +117,7 @@ class Users
                 WHERE token='$token'";
         $result = $this->connection->query($query);
         $user_id = $result->fetch_assoc();
-        return $user_id;
+        return $user_id['id'];
     }
 
         public function getIdByName($last_name){
