@@ -112,13 +112,32 @@ class Users
         return $user_id;
     }
 
-    public function AddBookList($user_id , $book_id ){
+    public function isBookListed($user_id , $book_id){
+        #returns true if book is in user's book list
+        $query = "SELECT COUNT(*) AS K FROM books_of_user WHERE user_id='$user_id' and book_id = '$book_id' ";
+        $result =$this->connection->query($query);
+        $row = $result->fetch_assoc();
+        $K = $row['K'];
+        if (intval($K) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function addBookList($user_id , $book_id ){
         #take book and put it in user's book list
         $query = "INSERT INTO books_of_user (user_id , book_id) VALUES ($user_id,'$book_id') ";
         $result = $this->connection->query($query);
     }
 
-    public function ShowBookList($token){
+    public function deleteBookList($user_id , $book_id){
+        #dislike the book from booklist (remove it)
+        $query = "DELETE FROM books_of_user WHERE user_id = '$user_id' and book_id = '$book_id' ";
+        $result = $this->connection->query($query);
+    }
+
+    public function showBookList($token){
         #take token and return the user's book list
         $id =$this->getId($token);
         $temp = $id['id'];

@@ -8,6 +8,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 
 $objConn = new DbConnect('localhost','ahmed','123456789','books');
+
 $conn = $objConn->connect();
 $obj = new Users($conn);
 
@@ -63,7 +64,6 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['first_n
                 break;
             }
         }
-
 
     	$obj->add($first_name , $last_name , $email , $password , $mobile , $rand , $image_id , $type , $bio);
         
