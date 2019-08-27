@@ -58,11 +58,13 @@ if($flag == 0 ){
 	$book_info[0]['url'] = "";
 }
 
-$isListed = '';
-if($objUser->isBookListed($user_id['id'] , $book_id){
-	$isListed = 'Dislike';
+
+$button = '';
+$user_id = $objUser->getId($token);
+if($objUser->isBookListed($user_id , $book_id)){
+	$book_info[0]['button'] = 'dislike';
 }else{
-	$isListed = 'Like';
+	$book_info[0]['button'] = 'like';
 }
 
 
@@ -71,19 +73,18 @@ $like = isset($_POST['like']) ? $_POST['like'] : '';
 if(strlen($like)){
 	$user_id = $objUser->getId($token);
 	
-	if($objUser->isBookListed($user_id['id'] , $book_id)){
-		$book_info[0]['liked'] = 'no';		
-		$objUser->deleteBookList($user_id['id'] , $book_id);
+	if($objUser->isBookListed($user_id , $book_id)){
+		$book_info[0]['isListed'] = 'yes';		
+		$objUser->deleteBookList($user_id , $book_id);
 	}else{
-		$book_info[0]['liked'] = 'yes';
-		$objUser->addBookList($user_id['id'] , $book_id);
+		$book_info[0]['isListed'] = 'no';
+		$objUser->addBookList($user_id , $book_id);
 	}
 
 }
 
 
-$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images , 
-'button' => $isListed ];
+$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images  ];
 echo json_encode($response);
 
 
