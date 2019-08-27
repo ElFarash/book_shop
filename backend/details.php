@@ -19,7 +19,9 @@ if(isset($_GET['id'])){
 }else {
   	$response = ['status' => 0 , 'message' => "wrong id was sent" ];
   	echo json_encode($response);
+  	die;
 }
+
 
 $books_authors_details = $objBook->getBook($book_id);
 
@@ -56,14 +58,25 @@ if($flag == 0 ){
 	$book_info[0]['url'] = "";
 }
 
-$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images];
-echo json_encode($response);
-
 $like = isset($_POST['like']) ? $_POST['like'] : '';
 if(strlen($like)){
 	$user_id = $objUser->getId($token);
-	$objUser->AddBookList($user_id['id'] , $book_id);
+	
+	if($objUser->isBookListed($user_id['id'] , $book_id)){
+		$book_info[0]['liked'] = 'no';		
+		$objUser->deleteBookList($user_id['id'] , $book_id);
+	}else{
+		$book_info[0]['liked'] = 'yes';
+		$objUser->addBookList($user_id['id'] , $book_id);
+	}
+
 }
+
+
+$response = ['status' => 1 , 'message' => "Book's Info Loaded successfully!" ,'book_info' => $book_info[0] , 'book_images' => $images];
+echo json_encode($response);
+
+
 
 
  ?>

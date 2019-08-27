@@ -16,7 +16,7 @@ $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';
 
 if($token){
 	if($obj_users->getUser($token)){
-		$books = $obj_users->ShowBookList($token);
+		$books = $obj_users->showBookList($token);
 		$response = ['status' => 1, 'message' => 'My Book List Loaded Fine!' , 'books'=> $books];
 		echo json_encode($response);
 
