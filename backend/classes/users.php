@@ -159,7 +159,7 @@ class Users
     public function showBookList($token){
         #take token and return the user's book list
         $id =$this->getId($token);
-        $temp = $id['id'];
+        $temp = $id;
         $query = "SELECT   books_of_user.user_id , books.id , books.title , books.rate , books.author_name , books.image_path , books.published_at  
             FROM books , books_of_user 
             WHERE  books.id = books_of_user.book_id and books_of_user.user_id = '$temp' "; 
