@@ -2,7 +2,7 @@
 
 include_once('classes\connection.php');
 
-class Books extends DbConnect
+class Books
 {
 
 	function __construct($conn) {
