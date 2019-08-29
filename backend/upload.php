@@ -49,13 +49,13 @@ if (in_array($fileExt, $allowed)) {
 			$fileDestination_image = "images/". $_FILES['book_image']['name'];
 			move_uploaded_file( $_FILES['book_image']['tmp_name'] , $fileDestination_image );
 		}else{
-			echo "too big image";
+			$errors['book_image']= "too big image";
 		}
 	}else{
-		echo "ERROR";
+		$errors['book_image']= "ERROR";
 	}
 }else {
-	echo "wrong image type!";
+	$errors['book_image']=  "wrong image type!";
 }
 
 
@@ -70,13 +70,13 @@ if (in_array($fileExtBook, $allowed_book)) {
 			$fileDestination_book = "books/". $_FILES['book_link']['name'];
 			move_uploaded_file( $_FILES['book_link']['tmp_name'] , $fileDestination_book );
 		}else{
-			echo "too big image";
+			$errors['book_link']=  "too big image";
 		}
 	}else{
-		echo "ERROR";
+		$errors['book_link']= "ERROR";
 	}
 }else {
-	echo "wrong book type!";
+	$errors['book_link']= "wrong book type!";
 }
 
 
@@ -89,7 +89,7 @@ if (!count($errors)) {
 		if ($insert) {
 			$response = array('status' => 1, 'message' => 'updated successfully!');
 		}else{
-			$response = array('status' =>0, 'message' => 'cant upload!');
+			$response = array('status' =>0, 'message' => 'couldnt upload!');
 		}
 		echo json_encode($response);
 }else{
