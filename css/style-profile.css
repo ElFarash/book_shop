@@ -1,7 +1,7 @@
 .navbar{
     border-bottom: 1px solid #E5EDED;
     font-family: source sans pro,sans-serif;
-    height: 60px;
+/*    height: 60px;*/
     background-color: #f5f5f5;
     
 }
@@ -10,8 +10,9 @@
 .navbar-light .navbar-brand {
   
   
-  padding: 12px;
-    height: 30px;
+/*  padding: 12px;*/
+    margin-top: 20px;
+/*    height: 30px;*/
     
    
 
@@ -122,9 +123,22 @@ word-break:normal;
     background-color: black;
 }
 
+.liked-profileBut{
+    margin-right: 0px;
+    border-radius: 70px;
+    width: 180px;
+    font-family: source sans pro,sans-serif;
+}
+
+
+.liked-profileBut:hover{
+    background-color: red;
+    
+}
 /*footer*/
 
 
+/*
 .copywrite{
    position: relative;
     left: 1100px;
@@ -134,6 +148,7 @@ word-break:normal;
     font-weight: bold;
     color: silver;
 }
+*/
 
 .foot-container{
     margin-top: 0px;
@@ -147,20 +162,21 @@ word-break:normal;
 .fa-facebook-f{
     position: relative;
     left:  120px;
+    top: 40px;
     color: silver;
 }
 
 .fa-twitter{
     position: relative;
     left: 160px;
-    
+    top: 40px;
     color: silver;
 }
 
 .fa-instagram{
     position: relative;
     left: 190px;
-     
+     top: 40px;
     color: silver;
 }
 
@@ -179,9 +195,6 @@ word-break:normal;
     color: red;
 }
 
-.bio{
-    text-align: left;
-}
 
 
 /*after login*/
@@ -202,24 +215,27 @@ word-break:normal;
 }
 
 
+#editButt{
+position: relative;
+left: 4px;}
 
 
-Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 991px) {
+    .last_name{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
     
-   
+    .nav-item{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    
+    
+    .logout{
+         margin-left: 20px;
+        margin-top: 20px;
+    }
+    
 } 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
-   
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}

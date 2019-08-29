@@ -237,15 +237,7 @@ div > img {
 }
 
 
-Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    
-   
-} 
 
-
-
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 991px) {
     .last_name{
         margin-left: 50px;
@@ -264,7 +256,3 @@ Extra small devices (phones, 600px and down) */
     }
     
 } 
-
-
-
-

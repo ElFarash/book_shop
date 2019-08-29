@@ -3,6 +3,7 @@ var webservice = "http://localhost/book_shop/backend/register.php";
 $("#loginform").submit(function(e){
               e.preventDefault();
     
+     
 
     var firstName = document.getElementById("firstName");
     var lastName = document.getElementById("lastName"); 
@@ -12,6 +13,8 @@ $("#loginform").submit(function(e){
     var conPassword = document.getElementById("confirm_password");
     var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var mobile= /^\d{11}$/;
+    var type= document.getElementById("type")
+    
      
     //javascript validate
    
@@ -88,7 +91,8 @@ $("#loginform").submit(function(e){
                         last_name: lastName.value,
                         email: email.value,
                         password: password.value,
-                        mobile : phone.value
+                        mobile : phone.value,
+                        type : type.value
                     };
                          $.ajax
                     ({
@@ -108,7 +112,7 @@ $("#loginform").submit(function(e){
                             document.getElementById("none-div2").style.display= "block";
                             document.getElementById("none-div2").innerHTML=data.message;
                             setTimeout(function(){
-                            window.open("index.html","_self"); }, 5000);
+                            window.open("index.html","_self"); }, 2000);
                                  localStorage.setItem("auth_key", data.token);
 
                                  
@@ -157,7 +161,7 @@ $("#loginform").submit(function(e){
 //                 });
     }
  });
-     
+
 
 
    

@@ -7,6 +7,7 @@ var firstName = document.getElementById("firstName");
     var phone = document.getElementById("Telephone"); 
    
     var mobile= /^\d{11}$/;
+    var bio= document.getElementById("bio");
     var token= { key: localStorage.getItem("auth_key")};
 
 
@@ -113,7 +114,8 @@ e.preventDefault();
                         first_name: firstName.value,
                         last_name: lastName.value,
                         password: password.value,
-                        mobile : phone.value
+                        mobile : phone.value,
+                        bio : bio.value
                     },
                 success: function (data) {
                     console.log(data);

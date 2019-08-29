@@ -56,7 +56,7 @@ var webservice = "http://localhost/book_shop/backend/login.php";
                             document.getElementById("none-div").style.display= "block";
                             document.getElementById("none-div").innerHTML=data.message;
                             setTimeout(function(){
-                                window.open("index.html","_self"); }, 5000);
+                                window.open("index.html","_self"); }, 2000);
                                 //to get token and store it in localstorage
                               localStorage.setItem("auth_key", data.token);
 //                              console.log(localStorage.getItem("auth_key"));

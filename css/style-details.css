@@ -1,10 +1,8 @@
 
-
-
 .navbar{
     border-bottom: 1px solid #E5EDED;
     font-family: source sans pro,sans-serif;
-    height: 60px;
+/*    height: 60px;*/
     background-color: #f5f5f5;
     
 }
@@ -13,8 +11,9 @@
 .navbar-light .navbar-brand {
   
   
-  padding: 12px;
-    height: 30px;
+/*  padding: 12px;*/
+    margin-top: 20px;
+/*    height: 30px;*/
     
    
 
@@ -183,17 +182,19 @@ a
 .product-download {
     font-size: 18px;
     font-weight: 600;
+    
 }
 
-.product-download button{
-  border: none;
+.product-download .btn{
+  border-radius: 3rem;
   outline: 0;
   padding: 12px;
   color: white;
   text-align: center;
   cursor: pointer;
-  width: 200%;
-  font-size: 18px;
+   width: 300px !important;
+    margin-top: 10px;
+   font-size: 18px;
     
 }
 .rate{
@@ -211,6 +212,7 @@ a
 /*footer*/
 
 
+/*
 .copywrite{
    position: relative;
     left: 980px;
@@ -220,6 +222,7 @@ a
     font-weight: bold;
     color: silver;
 }
+*/
 
 .foot-container{
     margin-top: 50px;
@@ -230,21 +233,21 @@ a
 
 .fa-facebook-f{
     position: relative;
-    
+    top: 40px;
     color: silver;
 }
 
 .fa-twitter{
     position: relative;
     left: 40px;
-    
+    top: 40px;
     color: silver;
 }
 
 .fa-instagram{
     position: relative;
     left: 70px;
-     
+     top: 40px;
     color: silver;
 }
 
@@ -283,3 +286,118 @@ a
     background-color: white;
     border-color: red;
 }
+
+
+
+.button-like {
+    
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+    width: 300px !important;
+}
+
+.button-like span {
+  margin-left: 0.5rem;
+}
+
+.button-like .fa,
+.button-like span {
+  transition: all ease 0.4s;
+}
+
+.button-like:focus {
+  background-color: transparent;
+    outline: 0 !important;
+}
+
+.button-like:focus .fa,
+.button-like:focus span {
+  color: #8a8a8a;
+}
+
+.button-like:hover {
+  border-color: #cc4b37;
+  background-color: transparent;
+}
+
+.button-like:hover .fa,
+.button-like:hover span {
+  color: #cc4b37;
+}
+
+.liked {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+  
+}
+
+.liked .fa {
+  color: #fefefe;
+}
+
+.liked span{
+    color: #fefefe;
+    visibility: hidden;
+    position: relative;
+}
+
+.liked span:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Dislike";
+}
+.liked:focus {
+  background-color: #cc4b37;
+    outline: 0 !important;
+}
+
+
+.liked:focus .fa,
+.liked:focus span {
+  color: #fefefe;
+}
+
+.liked:hover {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+  color: #fefefe;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .last_name{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    
+    .nav-item{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    
+    
+    .logout{
+         margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+} 
+
+
+

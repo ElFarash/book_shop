@@ -7,7 +7,7 @@ var token= { key: localStorage.getItem("auth_key")};
                         dataType: 'json',
                         headers: {'Authorization': token.key},
                         success: function (data) {
-                            if(token.key != ""){
+                            if(token.key != "" && data.info.type == "user"){
                                 
                                 var header_name=
                             '<ul class="navbar-nav ml-auto"><a href="profile.html"><li class="nav-item last_name">'+data.info.last_name+'</li></a></ul> <button onclick="localstorage_remove()" type="button" class="btn btn-danger logout">Log out</button>';
@@ -15,13 +15,28 @@ var token= { key: localStorage.getItem("auth_key")};
                             
                             
                                var retrieve=
-                                   '<div class="avatar"><img src="../images/1071625.jfif" height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><h4>10 po box new york</h4><p class="bio">grew up in a working class neighbourhood. He was raised by his father, his mother having left when he was young.He is currently in a relationship with Chelsea Rhiannon Moss. Chelsea is 2 years older than him and works as a lab assistant.Steves best friend is a P.P.E. student called Jaydan Nguyen. They have a very firey friendship. He also hangs around with Ayden Young and Dylan Owen. They enjoy relaxing together.</p><a href="update.html"><button class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
+                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
                                 $('.user-details').append(retrieve);
                             
                             
                             
                             
                             
+                            }
+                            
+                            else if(token.key != "" && data.info.type == "author"){
+                                
+                                    var header_name=
+                            '<ul class="navbar-nav ml-auto"><a href="profile.html"><li class="nav-item last_name">'+data.info.last_name+'</li></a></ul> <button onclick="localstorage_remove()" type="button" class="btn btn-danger logout">Log out</button>';
+                            $('.header_nav .collapse').append(header_name);
+                            
+                            
+                               var retrieve=
+                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
+                                $('.user-details').append(retrieve);
+                            
+                                
+                                
                             }
                             
                             else{

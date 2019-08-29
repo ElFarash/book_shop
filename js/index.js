@@ -38,17 +38,26 @@
                         headers: {'Authorization': token.key},
                         success: function (data) {
                             if(token.key != ""){
+//                                console.log(data);
+//                                console.log(data);
+                                
                                 
                                 var header_name=
                             '<ul class="navbar-nav ml-auto"><a href="profile.html"><li class="nav-item last_name">'+data.info.last_name+'</li></a></ul> <button onclick="localstorage_remove()" type="button" class="btn btn-danger logout">Log out</button>';
                             $('.header_nav .collapse').append(header_name);}
                             
                             else{
+                                
+                                
+                                
                                var header_name=
     '<ul class="navbar-nav ml-auto"><li class="nav-item active"><a class="nav-link" href="login.html">Login<span class="sr-only">(current)</span></a></li><li class="nav-item"><a class="nav-link" href="register.html">Register</a></li></ul>';
-                            $('.header_nav .collapse').append(header_name);
+                            $('.header_nav .collapse').append(header_name);}
 //                                console.log(data.info.first_name);
-                            }
+//                                console.log(data);
+                            
+                            
+                            
                             
                             },
                             
@@ -58,7 +67,7 @@
 //                        
 //                        },
                         error : function (data){
-                            alert(data.status)
+                            alert('data.status')
                         }
                      });
 
