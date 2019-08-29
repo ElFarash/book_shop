@@ -60,4 +60,4 @@ if (isset($_POST['password']) && isset($_POST['first_name'])) {
     echo json_encode($response);
 }
 
- ?>
+?>
