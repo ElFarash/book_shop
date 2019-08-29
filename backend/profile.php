@@ -23,6 +23,7 @@ if($user){
 	echo json_encode($response);
 }else{
 	$response =['status' => 0 , 'error' => 'token problem'];
+	echo json_encode($response);
 }
 
  ?>
