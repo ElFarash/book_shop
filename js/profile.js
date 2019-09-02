@@ -19,7 +19,7 @@ var token= { key: localStorage.getItem("auth_key")};
 //                                
                                    
                                  var retrieve=
-                                     '<div class="row"><div class="left col-lg-4"><div class="photo-left"><img class="photo" src='+data.info.image+'></div><h4 class="name">'+data.info.first_name+' '+data.info.last_name+'</h4><p class="info">UI/UX Designer</p><p class="info">'+data.info.email+'</p><p class="info">'+data.info.mobile+'</p><p class="desc">'+data.info.bio+'</p><div class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i><i class="fa fa-twitter-square" aria-hidden="true"></i><i class="fa fa-pinterest-square" aria-hidden="true"></i><i class="fa fa-tumblr-square" aria-hidden="true"></i></div><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a></div><div class="right col-lg-8"><ul class="nav"><li>liked Books</li></ul><div class="row gallery"><div class="card col-md-4 col-sm-6 col-12"><img src="https://images-na.ssl-images-amazon.com/images/I/51tQHDThsTL._SX329_BO1,204,203,200_.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">Justice on Trial</h5><p class="card-text">Author name: Mollie Hemingway</p><p class="card-text">Published at: 2019-03-11</p><a href="#" ><button class="infoo btn btn-primary button">More Info</button></a></div></div></div></div></div> <!--bigrow-->';
+                                     '<div class="row"><div class="left col-lg-4"><div class="photo-left"><img class="photo" src='+data.info.image+'></div><h4 class="name">'+data.info.first_name+' '+data.info.last_name+'</h4><p class="info">UI/UX Designer</p><p class="info">'+data.info.email+'</p><p class="info">'+data.info.mobile+'</p><p class="desc">'+data.info.bio+'</p><div class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i><i class="fa fa-twitter-square" aria-hidden="true"></i><i class="fa fa-pinterest-square" aria-hidden="true"></i><i class="fa fa-tumblr-square" aria-hidden="true"></i></div><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a></div><div class="right col-lg-8"><ul class="nav"><li>liked Books</li></ul><div class="row gallery">';
                                 $('main').append(retrieve);
                             
                             
@@ -70,13 +70,33 @@ var token= { key: localStorage.getItem("auth_key")};
 
 
 
-
-
-//
-//$('#card-button').on('click', function(){
-////       localStorage.setItem(id, value);
-//      window.open("details.html","_self");
-        
+$.ajax({
+                        type: "POST",
+                        url: "http://localhost/book_shop/backend/books_of_user.php" ,
+                        dataType: 'json',
+                        headers: {'Authorization': token.key},
+                        success: function (data) {
+console.log(data);
+//                           console.log(data.books);
+//                            console.log(localStorage.getItem("person_token"));
+                            for(var i=0 ;i< data.books.length; i++){
+//                                data.books[i]
+                                var card= 
+                     
+                                    '<div class="card col-md-4 col-sm-6 col-12"><img src="'+data.books[i].image_path+'" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+data.books[i].title+'</h5><p class="card-text">Author name: '+data.books[i].author_name+'</p><p class="card-text">Published at: '+data.books[i].published_at+'</p><a href="#" ><button class="infoo btn btn-primary button">More Info</button></a></div></div></div></div></div>';
+                                $('.gallery').append(card);
+                                
+//         '<div class="card" style="width: 18rem;"><img src="'+data.books[i].image_path+'"class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+data.books[i].title+'</h5><p class="card-text"><span class="names">Author name:</span>'+data.books[i].author_name+'</p><p class="card-text"><span class="names">Published at</span>:'+data.books[i].published_at+'</p><button onclick="redirect('+data.books[i].id+')" id="card-button" class="info btn btn-primary">More Info</button></div></div>';
+                                
+                            }
+                            
+                    
+                        },
+                        error : function (data){
+                            alert("error")
+                        }
+                    
+                     });
 
 
 
