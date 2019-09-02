@@ -14,9 +14,13 @@ var token= { key: localStorage.getItem("auth_key")};
                             $('.header_nav .collapse').append(header_name);
                             
                             
-                               var retrieve=
-                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
-                                $('.user-details').append(retrieve);
+                               
+//                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
+//                                
+                                   
+                                 var retrieve=
+                                     '<div class="row"><div class="left col-lg-4"><div class="photo-left"><img class="photo" src='+data.info.image+'></div><h4 class="name">'+data.info.first_name+' '+data.info.last_name+'</h4><p class="info">UI/UX Designer</p><p class="info">'+data.info.email+'</p><p class="info">'+data.info.mobile+'</p><p class="desc">'+data.info.bio+'</p><div class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i><i class="fa fa-twitter-square" aria-hidden="true"></i><i class="fa fa-pinterest-square" aria-hidden="true"></i><i class="fa fa-tumblr-square" aria-hidden="true"></i></div><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a></div><div class="right col-lg-8"><ul class="nav"><li>liked Books</li></ul><div class="row gallery"><div class="card col-md-4 col-sm-6 col-12"><img src="https://images-na.ssl-images-amazon.com/images/I/51tQHDThsTL._SX329_BO1,204,203,200_.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">Justice on Trial</h5><p class="card-text">Author name: Mollie Hemingway</p><p class="card-text">Published at: 2019-03-11</p><a href="#" ><button class="infoo btn btn-primary button">More Info</button></a></div></div></div></div></div> <!--bigrow-->';
+                                $('main').append(retrieve);
                             
                             
                             
@@ -32,8 +36,14 @@ var token= { key: localStorage.getItem("auth_key")};
                             
                             
                                var retrieve=
-                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
-                                $('.user-details').append(retrieve);
+//                                   
+//                                   '<div class="avatar"><img src='+data.info.image+' height="150" width="150"></div><h2>'+data.info.first_name+' '+data.info.last_name+'</h2><h4>'+data.info.email+'</h4><h4>'+data.info.mobile+'</h4><p class="bioo">'+data.info.bio+'</p><a href="books_of_user.html"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a>';
+                                
+                                   
+                                   
+                                   
+                                   '<div class="row"><div class="left col-lg-4"><div class="photo-left"><img class="photo" src='+data.info.image+'></div><h4 class="name">'+data.info.first_name+' '+data.info.last_name+'</h4><p class="info">UI/UX Designer</p><p class="info">'+data.info.email+'</p><p class="info">'+data.info.mobile+'</p><div class="stats row"><div class="stat1 col-xs-4"><p class="number-stat">3,619</p><p class="desc-stat">Followers</p></div><div class="stat2 col-xs-4"><p class="number-stat">42</p><p class="desc-stat">Following</p></div><div class="stat3 col-xs-4"><p class="number-stat">38</p><p class="desc-stat">Uploads</p></div></div><p class="desc">'+data.info.bio+'</p><div class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i><i class="fa fa-twitter-square" aria-hidden="true"></i><i class="fa fa-pinterest-square" aria-hidden="true"></i><i class="fa fa-tumblr-square" aria-hidden="true"></i></div><a href="#"><button class="btn btn-danger liked-profileBut">Liked books</button></a><a href="#"><button class="btn btn-success upload-profileBut">Upload book</button></a><a href="update.html"><button id="editButt" class="btn btn-secondary edit-profileBut">Edit profile</button></a></div><div class="right col-lg-8"><ul class="nav"><li>Published Books</li></ul><button class="follow">Follow</button><div class="row gallery"><div class="card col-md-4 col-sm-6 col-12"><img src="https://images-na.ssl-images-amazon.com/images/I/51tQHDThsTL._SX329_BO1,204,203,200_.jpg" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">Justice on Trial</h5><p class="card-text">Author name: Mollie Hemingway</p><p class="card-text">Published at: 2019-03-11</p><a href="#" ><button class="infoo btn btn-primary button">More Info</button></a></div></div></div> </div></div> ';
+                                   $('main').append(retrieve);
                             
                                 
                                 
