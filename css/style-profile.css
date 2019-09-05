@@ -148,13 +148,14 @@ html,body {
   margin: 30px auto 30px;
   padding: 0 !important;
   width: 90%;
+
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
 }
 
 .header {
   background: #eee;
-  background-image: url("https://image.noelshack.com/fichiers/2017/38/2/1505775648-annapurnafocus.jpg");
+  background-image: url(../images/freddie-marriage-w8JiSVyjy-8-unsplash.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -266,22 +267,6 @@ main {
   border-bottom: 1px solid #ededed;
 }
 
-.social {
-  margin: 5px 0 12px 0;
-  text-align: center;
-  display: inline-block;
-  font-size: 20pt;
-}
-
-.social i {
-  cursor: pointer;
-  margin: 0 15px;
-}
-
-.social i:nth-child(1)  { color: #4267b2; }
-.social i:nth-child(2)  { color: #1da1f2; }
-.social i:nth-child(3)  { color: #bd081c; }
-.social i:nth-child(4)  { color: #36465d; }
 
 .right {
   padding: 0 25px 0 25px !important;
@@ -311,8 +296,8 @@ main {
 
 .follow {
   position: absolute;
-  right: 8%;
-  top: 35px;
+  right: 2%;
+  top: 15px;
   font-size: 11pt;
   background-color: #42b1fa;
   color: #fff;
@@ -336,16 +321,13 @@ main {
 
 
 @media (max-width:990px) {
-  .nav {
-    display: none;
-  }
-  
+
     
     
   .follow {
     width: 50%;
     margin-left: 25%;
-      margin-top: 19%;
+      
     display: block;
     position: unset;
     text-align: center;
@@ -355,23 +337,25 @@ main {
     
    
 }
-.gallery  {
+.gallery , .gallery_author {
   margin-top: 35px;
    
 }
 
-.gallery div {
+.gallery div , .gallery_author div {
   margin-bottom: 30px;
 
 }
 
-.gallery img {
+.gallery img , .gallery_author img{
   box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
   width: auto; 
   height: auto;
   cursor: pointer;
   max-width: 100%;
 }
+
+
 
 
 
@@ -385,7 +369,7 @@ main {
 .card-title{
     font-size: 11pt;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  height: 22px;
     font-weight: bold;
 }
 
@@ -443,13 +427,34 @@ main {
     position: relative;
     
     left: 0;
-    top: 31px;
+    bottom: 10px;
 }
 
 .edit-profileBut:hover{
     background-color: black;
 }
 
+.edit-profileBut-author {
+     
+    border-radius: 190px;
+    width: 130px;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 168px;
+    margin-bottom: 40px;
+    position: relative;
+    bottom: 2px;
+   
+    
+    
+    
+    
+}
+
+
+
+.edit-profileBut-author:hover{
+    background-color: black;
+}
 
 
 .upload-profileBut{
@@ -460,8 +465,8 @@ main {
     font-family: 'Montserrat', sans-serif;
     position: relative;
     
-    top: 32px;
-    left: 100px;
+    top: 34.8px;
+    left: 91px;
 }
 
 
@@ -470,6 +475,36 @@ main {
     
 }
 
+
+
+.warning_user , .warning_author , .firstPublishMessage{
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    position: relative;
+    top: 50px;
+    
+    text-align: center;
+    color: gray;
+    
+
+   
+}
+
+/*
+.hr-line{
+     border-bottom: 1px solid #999;
+    position: relative;
+    width: 100px;
+   margin-left: 330px;
+    
+}
+*/
+
+
+.warning_author{
+    padding-bottom: 30px;
+}
 
 /*footer*/
 
@@ -531,6 +566,12 @@ main {
     
 }
 
+.names{
+    font-weight: bold;
+    
+    
+}
+
 
 .logout{
     color: black;
@@ -541,7 +582,8 @@ main {
 
 #editButt{
 position: relative;
-left: 4px;}
+left: 4px;
+}
 
 
 
@@ -563,3 +605,8 @@ left: 4px;}
     }
     
 } 
+
+
+
+
+

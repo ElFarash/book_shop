@@ -1,47 +1,54 @@
-body {
-    background-color: #f5f5f5;
+*{
     font-family: 'Montserrat', sans-serif;
-    
 }
 
-.title{
+.contain-upload{
     
-     
-   
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-top: 16px;
-   
-}
-
-.contain-all{
-    width: 60%;
-    margin: auto;
-     max-width: 900px;
+    
+    max-width: 900px;
   margin: 30px auto 30px;
   padding: 0;
   
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
+}
+
+.form-control{
+    width: 300px;
+}
+
+.update-form{
+    padding-top: 20px;
+}
+
+body {
+    background-color: #f5f5f5;
     
 }
 
-
-
-/*
-.avatar {
-  border-radius: 100px;
-  overflow: hidden;
-  height: 150px;
-  width: 150px;
-  position: relative;
-  margin: auto;
-  bottom: -10px;
- 
+.left {
+  display: flex;
+  align-items: center;
+/*  justify-content: center;*/
+  flex-direction: column;
 }
-*/
+
+.upload-button{
+    margin-top: 30px;
+}
+
+.input-file{
+    padding-right: 60px;
+}
 
 
+.btn-rounded{
+    border: 1px solid silver;
+    width: 300px;
+}
+.file-field{
+   padding-left: 16px;
+}
 /*
 .form-controll{
     margin-top: 40px;
@@ -49,15 +56,19 @@ body {
 }
 */
 
-/*
 .card{
     position: relative;
     top: 50px;
 }
-*/
 
 
 
+.card-header{
+        background-color: rgb(0, 123, 255);
+     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 
 /*
@@ -81,12 +92,27 @@ body {
 
 
 
+#none-div2{
+     display: none;
+     text-align: center;
+     position: relative;
+     top: 260px;
+     
+     height: 100px;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: bold;
+     font-size: 20px;
+    
+    
+}
+
+
 
 
 
 .navbar{
     border-bottom: 1px solid #E5EDED;
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 /*    height: 60px;*/
     background-color: #f5f5f5;
     
@@ -143,7 +169,7 @@ body {
 
 
 .last_name{
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     right: 20px;
     
@@ -151,7 +177,7 @@ body {
 
 .logout{
     color: black;
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     border-color: red;
 }
@@ -175,4 +201,13 @@ body {
     }
     
 } 
+
+
+.ddff{
+    background-color: silver;
+    width: 300px;
+    height: 200px;
+    border: 5px solid grey;
+}
+
 

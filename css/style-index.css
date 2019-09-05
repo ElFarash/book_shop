@@ -1,6 +1,8 @@
+
+
 .navbar{
     border-bottom: 1px solid #E5EDED;
-    font-family: source sans pro,sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 /*    height: 60px;*/
     background-color: #f5f5f5;
     
@@ -73,7 +75,7 @@
 .carousel-caption{
     color: white;
     font-weight: bold;
-    font-family: source sans pro,sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 div > img {
@@ -104,7 +106,7 @@ div > img {
     margin-top: 40px;
     font-size: 18px;
     margin-bottom: 20px;
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif !important;
     
 }
 
@@ -134,15 +136,17 @@ div > img {
 
 
 .card-title{
-    font-size: 13px;
-    font-weight: bold;
+   
+    font-weight:bold;
     height: 22px;
+    font-size: 13px;
     
 }
 
 .card-text{
-    font-family: 'Lora', serif;
-    font-size: 14px;
+    font-size: 9pt;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .items{
@@ -159,7 +163,7 @@ div > img {
 .info {
     color: black;
     font-style: italic;
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 /*
@@ -167,7 +171,7 @@ div > img {
    position: relative;
     left: 980px;
     top: 45px;
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 15px;
     font-weight: bold;
     color: silver;
@@ -222,7 +226,7 @@ div > img {
 
 
 .last_name{
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif !important;
     position: relative;
     right: 20px;
     
@@ -231,7 +235,7 @@ div > img {
 
 .logout{
     color: black;
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif !important;
     background-color: white;
     border-color: red;
 }

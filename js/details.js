@@ -28,7 +28,7 @@ $.ajax
                                   
         var info= 
                     
-        '<h4>'+data.book_info.title+'</h4><h5 class="rate">By:'+data.book_info.author_name+'</h5> <span class="rate">Rate:'+data.book_info.rate+'</span><p><span class="bio">Book description: </span>'+data.book_info.book_description+'</p><p><span class="bio">Author bio: </span>'+data.book_info.author_bio+'</p><div class="product-bottom-download"><button onclick="like_book()" class="button button-like" id="like"><i class="fa fa-heart"></i><span>Like</span></button><div class="product-download"><a href="'+data.book_info.url+'" class="btn btn-success download-link">Download</a></div></div>';
+        '<h4>'+data.book_info.title+'</h4><h5 class="rate">By: '+data.book_info.author_name+'</h5> <span class="rate">Rate: '+data.book_info.rate+'</span><p><span class="bio">Book description: </span>'+data.book_info.book_description+'</p><p><span class="bio">Author bio: </span>'+data.book_info.author_bio+'</p><div class="product-bottom-download"><button onclick="like_book()" class="button button-like" id="like"><i class="fa fa-heart"></i><span>Like</span></button><div class="product-download"><a href="'+data.book_info.url+'" class="btn btn-success download-link">Download</a></div></div>';
                               $('.product-details').append(info);
                             //if user(press like)
                
